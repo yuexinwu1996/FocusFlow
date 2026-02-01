@@ -5,7 +5,7 @@ struct DashboardView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             // Header (matches Timeline positioning & padding is applied on parent)
-            Text("Dashboard")
+            Text("dashboard")
                 .font(.custom("InstrumentSerif-Regular", size: 42))
                 .foregroundColor(.black)
                 .padding(.leading, 10) // Match Timeline header inset
@@ -24,12 +24,12 @@ struct DashboardView: View {
 
                 // Centered beta callout card over the preview area only
                 VStack(spacing: 10) {
-                    Text("This feature is in development. Reach out via the feedback tab if you want to be the first to beta test it!")
+                    Text("dashboard_beta_message")
                         .font(.system(size: 12, weight: .semibold))
                         .foregroundColor(.black)
                         .multilineTextAlignment(.center)
 
-                    Text("Ask and track answers to any question about your day, such as ‘How many times did I check Twitter today?’, ‘How long did I spend in Figma?’, or ‘What was my longest deep-work block?’")
+                    Text("dashboard_qa_prompt")
                         .font(.system(size: 13))
                         .foregroundColor(Color.black.opacity(0.8))
                         .multilineTextAlignment(.center)

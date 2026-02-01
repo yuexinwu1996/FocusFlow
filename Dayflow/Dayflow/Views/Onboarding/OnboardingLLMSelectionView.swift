@@ -47,7 +47,7 @@ struct OnboardingLLMSelectionView: View {
 
             VStack(spacing: 0) {
                 // Header
-                    Text("Choose a way to run Dayflow")
+                    Text("onboarding_choose_provider")
                     .font(.custom("InstrumentSerif-Regular", size: titleSize))
                     .multilineTextAlignment(.center)
                     .foregroundColor(.black.opacity(0.9))
@@ -80,20 +80,20 @@ struct OnboardingLLMSelectionView: View {
                 HStack(spacing: 0) {
                     Group {
                         if cliDetected {
-                            Text("You have Codex/Claude CLI installed! ")
+                            Text("llm_cli_detected")
                                 .foregroundColor(.black.opacity(0.6))
-                            + Text("We recommend using it for the best experience.")
+                            + Text("llm_cli_recommended")
                                 .fontWeight(.semibold)
                                 .foregroundColor(.black.opacity(0.8))
-                            + Text(" You can switch at any time in the settings.")
+                            + Text("llm_switch_anytime")
                                 .foregroundColor(.black.opacity(0.6))
                         } else {
-                            Text("Not sure which to choose? ")
+                            Text("llm_not_sure")
                                 .foregroundColor(.black.opacity(0.6))
-                            + Text("Bring your own keys is the easiest setup (30s).")
+                            + Text("llm_gemini_easiest")
                                 .fontWeight(.semibold)
                                 .foregroundColor(.black.opacity(0.8))
-                            + Text(" You can switch at any time in the settings.")
+                            + Text("llm_switch_anytime")
                                 .foregroundColor(.black.opacity(0.6))
                         }
                     }
@@ -119,17 +119,17 @@ struct OnboardingLLMSelectionView: View {
             // Run locally card
             FlexibleProviderCard(
                 id: "ollama",
-                title: "Use local AI",
-                badgeText: "MOST PRIVATE",
+                title: String(localized: "llm_local_title"),
+                badgeText: String(localized: "badge_most_private"),
                 badgeType: .green,
                 icon: "desktopcomputer",
                 features: [
-                    ("100% private - everything's processed on your computer", true),
-                    ("Works completely offline", true),
-                    ("Significantly less intelligence", false),
-                    ("Requires the most setup", false),
-                    ("16GB+ of RAM recommended", false),
-                    ("Can be battery-intensive", false)
+                    (String(localized: "llm_local_private"), true),
+                    (String(localized: "llm_local_offline"), true),
+                    (String(localized: "llm_local_less_intelligence"), false),
+                    (String(localized: "llm_local_most_setup"), false),
+                    (String(localized: "llm_local_ram"), false),
+                    (String(localized: "llm_local_battery"), false)
                 ],
                 isSelected: selectedProvider == "ollama",
                 buttonMode: .onboarding(onProceed: {
@@ -156,15 +156,15 @@ struct OnboardingLLMSelectionView: View {
             // Bring your own API card (selected by default)
             FlexibleProviderCard(
                 id: "gemini",
-                title: "Gemini",
-                badgeText: cliDetected ? "NEW" : "RECOMMENDED",
+                title: String(localized: "llm_gemini_title"),
+                badgeText: cliDetected ? String(localized: "badge_new") : String(localized: "badge_recommended"),
                 badgeType: cliDetected ? .blue : .orange,
                 icon: "gemini_asset",
                 features: [
-                    ("Utilizes more intelligent AI via Google's Gemini models", true),
-                    ("Uses Gemini's generous free tier (no credit card needed)", true),
-                    ("Faster, more accurate than local models", true),
-                    ("Requires getting an API key (takes 2 clicks)", false)
+                    (String(localized: "llm_gemini_intelligent"), true),
+                    (String(localized: "llm_gemini_free"), true),
+                    (String(localized: "llm_gemini_faster"), true),
+                    (String(localized: "llm_gemini_api_key"), false)
                 ],
                 isSelected: selectedProvider == "gemini",
                 buttonMode: .onboarding(onProceed: {
@@ -191,16 +191,16 @@ struct OnboardingLLMSelectionView: View {
             // ChatGPT/Claude CLI card
             FlexibleProviderCard(
                 id: "chatgpt_claude",
-                title: "ChatGPT or Claude",
-                badgeText: cliDetected ? "RECOMMENDED" : "NEW",
+                title: String(localized: "llm_chatgpt_claude_title"),
+                badgeText: cliDetected ? String(localized: "badge_recommended") : String(localized: "badge_new"),
                 badgeType: cliDetected ? .orange : .blue,
                 icon: "chatgpt_claude_asset",
                 features: [
-                    ("Perfect for existing ChatGPT Plus or Claude Pro subscribers", true),
-                    ("Superior intelligence and reliability", true),
-                    ("Minimal impact - uses <1% of your daily limit", true),
-                    ("Requires installing Codex or Claude CLI", false),
-                    ("Requires a paid ChatGPT or Claude subscription", false)
+                    (String(localized: "llm_chatgpt_perfect"), true),
+                    (String(localized: "llm_chatgpt_superior"), true),
+                    (String(localized: "llm_chatgpt_minimal"), true),
+                    (String(localized: "llm_chatgpt_cli"), false),
+                    (String(localized: "llm_chatgpt_subscription"), false)
                 ],
                 isSelected: selectedProvider == "chatgpt_claude",
                 buttonMode: .onboarding(onProceed: {

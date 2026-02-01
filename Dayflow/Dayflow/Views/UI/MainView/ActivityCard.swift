@@ -67,17 +67,17 @@ struct ActivityCard: View {
             VStack(spacing: 10) {
                 Spacer()
                 if hasAnyActivities {
-                    Text("Select an activity to view details")
+                    Text("activity_select_to_view")
                         .font(.custom("Nunito", size: 15))
                         .fontWeight(.regular)
                         .foregroundColor(.gray.opacity(0.5))
                 } else {
                     if appState.isRecording {
                         VStack(spacing: 6) {
-                            Text("No cards yet")
+                            Text("activity_no_cards_yet")
                                 .font(.system(size: 14, weight: .semibold))
                                 .foregroundColor(.gray.opacity(0.7))
-                            Text("Cards are generated about every 15 minutes. If Dayflow is on and no cards show up within 30 minutes, please report a bug.")
+                            Text("activity_no_cards_msg")
                                 .font(.custom("Nunito", size: 13))
                                 .foregroundColor(.gray.opacity(0.6))
                                 .multilineTextAlignment(.center)
@@ -85,10 +85,10 @@ struct ActivityCard: View {
                         }
                     } else {
                         VStack(spacing: 6) {
-                            Text("Recording is off")
+                            Text("activity_recording_off")
                                 .font(.system(size: 14, weight: .semibold))
                                 .foregroundColor(.gray.opacity(0.7))
-                            Text("Dayflow recording is currently turned off, so cards aren’t being produced.")
+                            Text("activity_dayflow_off_msg")
                                 .font(.custom("Nunito", size: 13))
                                 .foregroundColor(.gray.opacity(0.6))
                                 .multilineTextAlignment(.center)
@@ -120,7 +120,7 @@ struct ActivityCard: View {
                         .foregroundColor(.black)
 
                     HStack(alignment: .center, spacing: 6) {
-                        Text("\(timeFormatter.string(from: activity.startTime)) - \(timeFormatter.string(from: activity.endTime))")
+                        Text(String(format: String(localized: "activity_time_range"), timeFormatter.string(from: activity.startTime), timeFormatter.string(from: activity.endTime)))
                             .font(
                                 Font.custom("Nunito", size: 12)
                             )
@@ -173,7 +173,7 @@ struct ActivityCard: View {
                                         .frame(width: 24, height: 24)
                                 }
                                 .buttonStyle(PlainButtonStyle())
-                                .accessibilityLabel(Text("Change category"))
+                                .accessibilityLabel(Text("activity_change_category"))
                             }
                         }
                     }
@@ -237,7 +237,7 @@ struct ActivityCard: View {
     private func summaryContent(for activity: TimelineActivity) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             VStack(alignment: .leading, spacing: 3) {
-                Text("SUMMARY")
+                Text("activity_summary")
                     .font(
                         Font.custom("Nunito", size: 12)
                             .weight(.semibold)
@@ -256,7 +256,7 @@ struct ActivityCard: View {
 
             if !activity.detailedSummary.isEmpty && activity.detailedSummary != activity.summary {
                 VStack(alignment: .leading, spacing: 3) {
-                    Text("DETAILED SUMMARY")
+                    Text("activity_detailed_summary")
                         .font(
                             Font.custom("Nunito", size: 12)
                                 .weight(.semibold)
@@ -345,7 +345,7 @@ struct ActivityCard: View {
                     .scaleEffect(0.7)
                     .frame(width: 16, height: 16)
 
-                Text("Processing")
+                Text("activity_processing")
                     .font(.custom("Nunito", size: 13))
                     .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
                     .lineLimit(1)
@@ -358,7 +358,7 @@ struct ActivityCard: View {
             // Retry button - orange pill
             Button(action: { handleRetry(for: activity) }) {
                 HStack(alignment: .center, spacing: 4) {
-                    Text("Retry")
+                    Text("retry")
                         .font(.custom("Nunito", size: 13).weight(.medium))
                     Image(systemName: "arrow.clockwise")
                         .font(.system(size: 13, weight: .medium))

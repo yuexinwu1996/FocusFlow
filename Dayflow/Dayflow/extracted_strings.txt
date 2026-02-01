@@ -1,0 +1,280 @@
+(aistudio.google.com)
+.
+1.
+1. Open LM Studio → Models tab
+2.
+2. Search for 'Qwen3-VL-4B' and install the Instruct variant
+3.
+:
+AI-Powered Insights
+AIza...
+API key (optional)
+API key should start with 'AIza' and be at least 30 characters
+Access granted!
+Active provider and runtime details
+Add a category to get started.
+Adjust storage limit
+Adjust the prompts used for local timeline summaries
+Advanced users can pick any
+After installing LM Studio, download the recommended model:
+After installing Ollama, run this in your terminal to download the model (≈5GB):
+All caught up!
+Already have a local server? Make sure it’s OpenAI-compatible. You can set a custom base URL in the next step.
+App preferences
+Ask and track answers to any question about your day, such as ‘How many times did I check Twitter today?’, ‘How long did I spend in Figma?’, or ‘What was my longest deep-work block?’
+Back
+Base URL
+Before you begin
+Brainstorming with Chat GPT
+Break
+Bring your own keys is the easiest setup (30s).
+Browsing TripAdvisor
+Calendar
+Cancel
+Cards are generated about every 15 minutes. If Dayflow is on and no cards show up within 30 minutes, please report a bug.
+Change category
+ChatGPT / Claude prompt customization
+ChatGPT or Claude
+Check for Updates
+Check installations
+Choose a way to run Dayflow
+Choose engine
+Choose which Gemini model Dayflow should prioritize
+Choose which provider Dayflow should use
+Choose your Gemini model. If you're on the free tier, pick 3 Flash, it's the most powerful model and is completely free to use. If you're on a paid plan, which is not recommended, I recommend 2.5 Flash-Lite to minimize costs.
+Choose your local AI engine
+Close
+Coding session
+Come back after a few timeline cards appear.
+Comparing flights
+Complete
+Complete Setup
+Configure WhatsNewConfiguration.configuredRelease to preview.
+Confirm
+Connection health
+Continue
+Copied
+Copy logs
+Copy the code below and try running it in your terminal
+Copy timeline
+Copy timeline to clipboard
+Count: \(count)
+Create a new API key and copy it
+Create a new category
+Current configuration
+Custom
+Custom model
+Customize the local model prompts for summary and title generation.
+Customize your categories
+DETAILED SUMMARY
+Dashboard
+Dayflow Journal
+Dayflow Pro
+Dayflow Pro diagnostics coming soon
+Dayflow automatically downgrades if your chosen model is rate limited or unavailable.
+Dayflow can talk to ChatGPT (via the Codex CLI) or Claude Code. You only need one installed and signed in on this Mac. After installing, run `codex auth` or `claude login` in Terminal to connect it to your account.
+Dayflow helps you track your daily and longer term goals, gives you the space to reflect, and generates a summary of each day.
+Dayflow helps you track your daily and longer term pursuits, gives you the space to reflect, and generates a summary of each day.
+Dayflow paused for
+Dayflow recording is currently turned off, so cards aren’t being produced.
+Dayflow summary
+Debug
+Debug output:
+Disk usage
+Distractions so far
+Download LM Studio
+Download Qwen3-VL 4B in LM Studio
+Download a Markdown export for any date range
+Download the AI model
+Downloads Qwen3 Vision 4B for Ollama
+Drag to category
+EARLY ACCESS
+Edit categories to calculate distractions.
+Edit categories to calculate focus.
+Edit colors
+Edit configuration
+Edit title and description
+Email Jerry
+Email responses
+Email works great if you want to drop a quick note, Discord if you want to join the community, and if you’d prefer to chat, find some time on my calendar - I’d love to dig into why Dayflow is or isn’t working well for you.
+Ensure Dayflow can capture your screen
+Enter API key
+Enter access code
+Enter your API key:
+Export end date
+Export start date
+Export timeline
+Follow the steps below, run a quick test, and Dayflow will switch you over automatically.
+For local use, LM Studio is the most reliable; Ollama has a known thinking bug in onboarding (can't turn thinking off) and performance is unreliable.
+Gemini
+Gemini model
+Gemini model preference
+Gemini prompt customization
+General toggles and telemetry settings
+Generating summary...
+Get API key
+Get early access
+Get your Gemini API key
+Google's Gemini offers a generous free tier that should allow you to run Dayflow ~15 hours a day for free - no credit card required
+Grant Permission
+Happy Holidays! Big updates + Gemini Flash 3
+Helpful for checking PATH differences. We run using the same environment as the detection step.
+How was your day? What did you do? How do you feel?
+If you find that your activities are summarized inaccurately, try editing the descriptions of your categories to improve Dayflow’s accuracy.
+If you get stuck here, you can go back and choose the ‘Bring your own key’ option — it only takes a minute to set up.
+Includes titles, summaries, and details for each card.
+Install Qwen3-VL 4B
+Install and Forget
+Install model
+I’d like to share this log to the developer to help improve the product.
+Join Discord
+Keep Qwen2.5
+Keeps the menu bar controller running right after you sign in so capture can resume instantly.
+LLM, but we strongly recommend using Qwen3-VL 4B based on our internal benchmarks.
+LM Studio
+Last checked \(relativeDate(last))
+Last step!
+Launch Dayflow at login
+Local prompt customization
+Long term goals
+Longest focus duration
+Lower \(categoryName) limit?
+Make sure your server exposes the OpenAI Chat Completions API and has Qwen3-VL 4B (or Qwen2.5-VL 3B if you need the legacy model) installed.
+Manage how Dayflow runs
+Manual setup:
+Model ID
+Need at least 1 hour of timeline activity to summarize
+Next
+No activity data yet
+No cards yet
+No journal entry for this day
+Not sure which to choose?
+Notes for today
+Nothing to review yet
+Ollama
+Once downloaded, turn on 'Local Server' in LM Studio (default http://localhost:1234)
+Once the test succeeds, Dayflow updates your settings to \(preset.displayName) automatically.
+Open Dayflow
+Open Google AI Studio
+Open Recordings
+Open System Settings
+Open folders or adjust per-type storage caps
+Override Dayflow's defaults to tailor card generation
+Overrides apply only when their toggle is on. Unchecked sections fall back to Dayflow's defaults.
+Part 1 of 2
+Part 2 of 2
+Paste your Gemini API key below
+Pause Dayflow
+Permission Required
+Planning
+Processing
+Professional, school, or career-focused tasks (coding, design, meetings).
+Prompt text
+Provider options
+Quick utilities
+Quit & Reopen
+Quit Completely
+Reach out
+Record
+Recording
+Recording Status
+Recording is off
+Reducing the \(categoryName) limit to \(option.label) will immediately delete the oldest \(categoryName) data to stay under the new cap.
+Regenerate summary
+Repeat on
+Research
+Reset to Dayflow defaults
+Resume Dayflow
+Retry
+Return near the end of your day to reflect on your intentions.
+Return near the end of your day to reflect on your intentions. Let Dayflow generate a narrative summary based on the activities on your Timeline.
+Review Your Day
+Run a command as Dayflow
+Run a quick test for the active provider
+Run this command:
+Screen Recording
+Screen recordings are stored locally on your Mac and can be processed entirely on-device using local AI models.
+Select ChatGPT or Claude above before running the test.
+Select Date
+Select an activity to view details
+Set daily intentions and track your progress
+Set recurring notifications to remind yourself to set your intentions and reflect.
+Set reminders
+Set today's intentions
+Set your intentions today
+Settings
+Setup
+Share
+Share crash reports and anonymous usage data
+Show Dock icon
+Show Journal debug panel
+Star Dayflow on GitHub
+Start
+Start date must be on or before end date.
+Start onboarding
+Stored locally in UserDefaults and sent as a Bearer token for custom endpoints (LiteLLM, OpenRouter, etc.)
+Submit
+Subtle
+Summarizing your day recorded on your timeline…
+Summary from yesterday
+Swipe on each card on your Timeline to review your day.
+Switch
+Switch providers at any time
+Tell us more about your feedback
+Terminal command:
+Test connection
+Thank you for your feedback!
+Thank you!
+Thanks for using Dayflow
+This data will update every 15 minutes. Check back throughout the day to gain new understanding on your workflow.
+This feature is in development. Reach out via the feedback tab if you want to be the first to beta test it!
+This model enables Dayflow to understand what's on your screen
+This step is optional. You can change the colors anytime while using Dayflow.
+This step is optional. You can customize the categories or create new ones anytime while using Dayflow.
+This will download the \(LocalModelPreset.qwen3VL4B.displayName) model (about 5GB)
+This will open LM Studio and prompt you to download the model (≈3GB).
+Thumbs down
+Thumbs up
+Tip: Once both are installed, you can choose which provider Dayflow uses from Settings → AI Provider.
+To help Dayflow organize your activities more accurately, try adding more details to the descriptions in your categories
+Today's intentions
+Today's reflections
+Total focus time
+Total time captured
+Total time distracted
+Turn on Screen Recording for Dayflow, then quit and reopen the app to finish.
+Undo
+Upgrade now
+Upgrade to Qwen3VL for a big improvement in quality.
+Upgrade to \(preset.displayName)
+Use ChatGPT or Claude
+Use any OpenAI-compatible VLM
+Use local AI
+View release notes
+Visit Google AI Studio
+We recommend using it for the best experience.
+We'll ask your CLI a simple question to verify it's working and signed in.
+Week in review
+Welcome to Dayflow! Let it run for about 30 minutes to gather enough data, then come back to explore your personalized timeline. If you have any issues, feature requests, or feedback please use the feedback tab. I would love to hear from you!
+What are you working towards?
+What mindset do you want to carry today?
+What's New in \(releaseNote.version) 🎉
+When off, Dayflow runs as a menu bar–only app.
+Which local runtime are you using?
+Which tool are you using?
+You are ready to go!
+You can switch at any time in the settings.
+You have Codex/Claude CLI installed!
+You've reviewed all your activities so far.\nThe Timeline right panel will be updated with your rating.
+Your API key is encrypted and stored in your macOS Keychain - never uploaded anywhere
+Your day so far
+Your day so far is a preview of what's to come in Dashboard. This feature is still in beta and may change rapidly.
+Your focus
+Your privacy is guaranteed: All recordings stay on your Mac. With local AI models, even processing happens on-device. Nothing leaves your computer.
+Your reflections
+Your review
+macOS will ask for screen recording permission to enable activity tracking.
+to update your data.
+tracked this week
+vision-capable
+✓ Permission granted! Click Next to continue.

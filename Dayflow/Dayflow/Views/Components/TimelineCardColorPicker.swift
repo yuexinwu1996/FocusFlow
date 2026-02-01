@@ -361,7 +361,7 @@ fileprivate struct ColorSwatch: View {
                 .animation(.easeInOut(duration: 0.15), value: hovering)
 
             if showHint && hovering {
-                Text("Drag to category")
+                Text("category_drag_to_category")
                     .font(.system(size: 11))
                     .foregroundColor(.white)
                     .padding(.vertical, 4)
@@ -435,7 +435,7 @@ fileprivate struct EditableCategoryCard: View {
                     Image("CategoriesCheckmark")
                         .resizable()
                         .frame(width: 20, height: 20)
-                        .accessibilityLabel("Save category edits")
+                        .accessibilityLabel(Text("category_save_edits_accessibility"))
                 }
                 .buttonStyle(.plain)
 
@@ -443,7 +443,7 @@ fileprivate struct EditableCategoryCard: View {
 
             ZStack(alignment: .topLeading) {
                 if draftDetails.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                    Text("Professional, school, or career-focused tasks (coding, design, meetings).")
+                    Text("category_placeholder_details")
                         .font(Font.custom("Nunito", size: 12).weight(.medium))
                         .foregroundColor(Color.black.opacity(0.35))
                         .padding(.horizontal, 12)
@@ -486,7 +486,7 @@ fileprivate struct EditableCategoryCard: View {
                     .foregroundColor(.black)
                     .frame(maxWidth: .infinity, alignment: .center)
 
-                Text(category.details.isEmpty ? "Add a description to help Dayflow understand your workflow." : category.details)
+                Text(category.details.isEmpty ? String(localized: "category_add_description") : category.details)
                     .font(Font.custom("Nunito", size: 12).weight(.medium))
                     .foregroundColor(Color(red: 0.35, green: 0.35, blue: 0.35))
                     .frame(maxWidth: .infinity, alignment: .center)
@@ -502,7 +502,7 @@ fileprivate struct EditableCategoryCard: View {
                     Image("CategoriesEdit")
                         .resizable()
                         .frame(width: 20, height: 20)
-                        .accessibilityLabel("Edit category")
+                        .accessibilityLabel(Text("category_edit_accessibility"))
                 }
                 .buttonStyle(.plain)
 
@@ -512,7 +512,7 @@ fileprivate struct EditableCategoryCard: View {
                     Image("CategoriesDelete")
                         .resizable()
                         .frame(width: 20, height: 20)
-                        .accessibilityLabel("Delete category")
+                        .accessibilityLabel(Text("category_delete_accessibility"))
                 }
                 .buttonStyle(.plain)
             }
@@ -647,7 +647,7 @@ struct ColorOrganizerRoot: View {
 
     var presentationStyle: PresentationStyle = .embedded
     var onDismiss: (() -> Void)?
-    var completionButtonTitle: String?
+    var completionButtonTitle: LocalizedStringKey?
     var showsTitles: Bool = true
     @EnvironmentObject private var categoryStore: CategoryStore
 
@@ -703,7 +703,7 @@ struct ColorOrganizerRoot: View {
 
             VStack(spacing: verticalSpacing) {
                 if stage == .details && showsTitles {
-                    Text("Customize your categories")
+                    Text("category_customize_title")
                         .font(Font.custom("Instrument Serif", size: 44))
                         .foregroundColor(.black)
                         .frame(maxWidth: .infinity, alignment: .center)
@@ -752,12 +752,12 @@ struct ColorOrganizerRoot: View {
         VStack(alignment: .leading, spacing: showTitles ? 20 : 16) {
             if showTitles {
                 VStack(alignment: .leading, spacing: 6) {
-                    Text("Part 1 of 2")
+                    Text("category_setup_part1")
                         .font(Font.custom("Nunito", size: 14).weight(.bold))
                         .foregroundColor(Color(red: 0.98, green: 0.43, blue: 0))
                         .frame(maxWidth: .infinity, alignment: .leading)
 
-                    Text("Edit title and description")
+                    Text("category_setup_edit_title")
                         .font(Font.custom("Instrument Serif", size: 30))
                         .foregroundColor(.black)
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -767,25 +767,25 @@ struct ColorOrganizerRoot: View {
             VStack(alignment: .leading, spacing: 16) {
                 instructionRow(
                     icon: "CategoriesOrganize",
-                    text: "Dayflow organizes your activities by the category titles and descriptions you provide."
+                    text: "category_setup_organizes"
                 )
                 .frame(maxWidth: isCompact ? .infinity : 280, alignment: .leading)
 
                 instructionRow(
                     icon: "CategoriesTextSelect",
-                    text: "Try to provide as much details in the descriptions as you can to help Dayflow understand your workflow and habits."
+                    text: "category_setup_tips"
                 )
                 .frame(maxWidth: isCompact ? .infinity : 280, alignment: .leading)
             }
 
-            Text("This step is optional. You can customize the categories or create new ones anytime while using Dayflow.")
+            Text("category_setup_optional_details")
                 .font(Font.custom("Nunito", size: 12).weight(.medium))
                 .foregroundColor(Color(red: 0.48, green: 0.48, blue: 0.48))
                 .frame(maxWidth: isCompact ? .infinity : 280, alignment: .leading)
         }
     }
 
-    private func instructionRow(icon: String, text: String) -> some View {
+    private func instructionRow(icon: String, text: LocalizedStringKey) -> some View {
         HStack(alignment: .top, spacing: 12) {
             Image(icon)
                 .resizable()
@@ -802,12 +802,12 @@ struct ColorOrganizerRoot: View {
         VStack(alignment: .leading, spacing: 24) {
             if showTitles {
                 VStack(alignment: .leading, spacing: 6) {
-                    Text("Part 2 of 2")
+                    Text("category_setup_part2")
                         .font(Font.custom("Nunito", size: 14).weight(.bold))
                         .foregroundColor(Color(red: 0.98, green: 0.43, blue: 0))
                         .frame(maxWidth: .infinity, alignment: .leading)
 
-                    Text("Edit colors")
+                    Text("category_setup_edit_colors")
                         .font(Font.custom("Instrument Serif", size: 30))
                         .foregroundColor(.black)
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -842,7 +842,7 @@ struct ColorOrganizerRoot: View {
             }
 
             VStack(alignment: .leading, spacing: 12) {
-                Text(isDraggingColor ? "Drop on a category →" : "Click and drag on the canvas above to change the color palette. Then drag a color onto a category.")
+                Text(isDraggingColor ? LocalizedStringKey("category_drop_on_category") : LocalizedStringKey("category_color_picker_instructions"))
                     .font(Font.custom("Nunito", size: 13).weight(.medium))
                     .foregroundColor(Color(red: 0.3, green: 0.3, blue: 0.3))
 
@@ -879,7 +879,7 @@ struct ColorOrganizerRoot: View {
                     .font(.system(size: 10, weight: .bold))
                     .foregroundColor(Color(red: 0.49, green: 0.33, blue: 0.16))
 
-                Text("Create a new category")
+                Text("category_create_new")
                     .font(Font.custom("Nunito", size: 14).weight(.bold))
                     .foregroundColor(Color(red: 0.49, green: 0.33, blue: 0.16))
             }
@@ -952,20 +952,20 @@ struct ColorOrganizerRoot: View {
             .frame(maxWidth: isCompact ? .infinity : 708)
             .frame(height: containerHeight, alignment: .topLeading)
 
-            Text("This step is optional. You can change the colors anytime while using Dayflow.")
+            Text("category_colors_optional")
                 .font(Font.custom("Nunito", size: 12).weight(.medium))
                 .foregroundColor(Color(red: 0.48, green: 0.48, blue: 0.48))
                 .frame(maxWidth: .infinity, alignment: .leading)
 
             HStack(spacing: 16) {
-                SetupSecondaryButton(title: "Back") {
+                SetupSecondaryButton(title: "back") {
                     withAnimation(.easeInOut(duration: 0.25)) {
                         isDraggingColor = false
                         stage = .details
                     }
                 }
 
-                SetupContinueButton(title: completionButtonTitle ?? "Next", isEnabled: !categories.isEmpty) {
+                SetupContinueButton(title: completionButtonTitle ?? "next", isEnabled: !categories.isEmpty) {
                     categoryStore.persist()
                     onDismiss?()
                 }
@@ -1027,7 +1027,7 @@ struct ColorOrganizerRoot: View {
                 HStack {
                     addCategoryButton
                     Spacer()
-                    SetupContinueButton(title: "Next", isEnabled: !categories.isEmpty) {
+                    SetupContinueButton(title: "next", isEnabled: !categories.isEmpty) {
                         commitPendingEditsIfNeeded()
                         categoryStore.persist()
                         withAnimation(.easeInOut(duration: 0.25)) {
@@ -1041,7 +1041,7 @@ struct ColorOrganizerRoot: View {
     }
 
     private var emptyState: some View {
-        Text("Add a category to get started.")
+        Text("category_add_to_get_started")
             .font(Font.custom("Nunito", size: 13).weight(.medium))
             .foregroundColor(Color(red: 0.35, green: 0.35, blue: 0.35))
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -1083,14 +1083,14 @@ struct ColorOrganizerRoot: View {
     }
 
     private struct SetupSecondaryButton: View {
-        let title: String
+        let title: LocalizedStringKey
         let isEnabled: Bool
         let action: () -> Void
 
         @State private var isPressed = false
         @State private var isHovered = false
 
-        init(title: String, isEnabled: Bool = true, action: @escaping () -> Void) {
+        init(title: LocalizedStringKey, isEnabled: Bool = true, action: @escaping () -> Void) {
             self.title = title
             self.isEnabled = isEnabled
             self.action = action
@@ -1149,7 +1149,7 @@ struct ColorOrganizerRoot: View {
 
             showFirstTimeHints = false
 
-            let baseName = "New category"
+            let baseName = String(localized: "category_new_default")
             var candidate = baseName
             var suffix = 2
             let existingNames = Set(categories.map { $0.name.lowercased() })

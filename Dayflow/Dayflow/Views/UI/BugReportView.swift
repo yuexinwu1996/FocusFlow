@@ -14,11 +14,11 @@ struct BugReportView: View {
     var body: some View {
         VStack(spacing: 36) {
             VStack(spacing: 16) {
-                Text("Thanks for using Dayflow")
+                Text("bugreport_thanks_title")
                     .font(.custom("InstrumentSerif-Regular", size: 40))
                     .foregroundColor(.black.opacity(0.9))
 
-                Text("Email works great if you want to drop a quick note, Discord if you want to join the community, and if you’d prefer to chat, find some time on my calendar - I’d love to dig into why Dayflow is or isn’t working well for you.")
+                Text("bugreport_contact_description")
                     .font(.custom("Nunito", size: 16))
                     .foregroundColor(.black.opacity(0.65))
                     .multilineTextAlignment(.center)
@@ -27,7 +27,7 @@ struct BugReportView: View {
             }
             VStack(spacing: 24) {
                 VStack(spacing: 12) {
-                    Text("Reach out")
+                    Text("bugreport_reach_out")
                         .font(.custom("Nunito", size: 14).weight(.medium))
                         .foregroundColor(.black.opacity(0.55))
                         .textCase(.uppercase)
@@ -40,7 +40,7 @@ struct BugReportView: View {
                                 HStack(spacing: 12) {
                                     Image(systemName: "envelope.fill")
                                         .font(.system(size: 18, weight: .semibold))
-                                    Text("Email Jerry")
+                                    Text("bugreport_email_jerry")
                                         .font(.custom("Nunito", size: 16).weight(.semibold))
                                 }
                             },
@@ -62,7 +62,7 @@ struct BugReportView: View {
                                         .renderingMode(.original)
                                         .aspectRatio(contentMode: .fit)
                                         .frame(width: 22, height: 18)
-                                    Text("Join Discord")
+                                    Text("bugreport_join_discord")
                                         .font(.custom("Nunito", size: 16).weight(.semibold))
                                 }
                             },
@@ -81,7 +81,7 @@ struct BugReportView: View {
                                 HStack(spacing: 12) {
                                     Image(systemName: "calendar.badge.clock")
                                         .font(.system(size: 18, weight: .semibold))
-                                    Text("Calendar")
+                                    Text("bugreport_calendar")
                                         .font(.custom("Nunito", size: 16).weight(.semibold))
                                 }
                             },
@@ -97,7 +97,7 @@ struct BugReportView: View {
                 }
 
                 VStack(spacing: 12) {
-                    Text("Quick utilities")
+                    Text("bugreport_quick_utilities")
                         .font(.custom("Nunito", size: 14).weight(.medium))
                         .foregroundColor(.black.opacity(0.55))
                         .textCase(.uppercase)

@@ -19,13 +19,13 @@ struct StatusMenuView: View {
 
             MenuDivider()
 
-            MenuRow(title: "Open Dayflow", systemImage: "macwindow", action: openDayflow)
-            MenuRow(title: "Open Recordings", action: openRecordingsFolder)
-            MenuRow(title: "Check for Updates", action: checkForUpdates)
+            MenuRow(title: String(localized: "menu_open"), systemImage: "macwindow", action: openDayflow)
+            MenuRow(title: String(localized: "menu_open_recordings"), action: openRecordingsFolder)
+            MenuRow(title: String(localized: "menu_check_updates"), action: checkForUpdates)
 
             MenuDivider()
 
-            MenuRow(title: "Quit Completely", systemImage: "power", accent: .red, action: quitDayflow)
+            MenuRow(title: String(localized: "menu_quit"), systemImage: "power", accent: .red, action: quitDayflow)
         }
         .padding(.vertical, 9)
         .padding(.horizontal, 9)
@@ -108,7 +108,7 @@ private struct PauseSection: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             // Header
-            Text("Pause Dayflow")
+            Text("menu_pause")
                 .font(.system(size: 12, weight: .medium))
                 .foregroundStyle(.secondary)
                 .padding(.horizontal, 5)
@@ -125,9 +125,9 @@ private struct DurationPicker: View {
     let onSelect: (PauseDuration) -> Void
 
     private let options: [(label: String, duration: PauseDuration)] = [
-        ("15 Min", .minutes15),
-        ("30 Min", .minutes30),
-        ("1 Hour", .hour1),
+        (String(localized: "menu_15min"), .minutes15),
+        (String(localized: "menu_30min"), .minutes30),
+        (String(localized: "menu_1hour"), .hour1),
         ("∞", .indefinite)
     ]
 
@@ -205,7 +205,7 @@ private struct PausedSection: View {
 
             // Resume button
             MenuRow(
-                title: "Resume Dayflow",
+                title: String(localized: "menu_resume"),
                 systemImage: "play.circle",
                 accent: .accentColor,
                 action: onResume
@@ -221,7 +221,7 @@ private struct CountdownBadge: View {
 
     var body: some View {
         HStack(spacing: 0) {
-            Text("Dayflow paused for ")
+            Text("menu_paused_for")
                 .font(.system(size: 11, weight: .medium))
             Text(remainingTime)
                 .font(.system(size: 11, weight: .bold).monospacedDigit())

@@ -24,11 +24,11 @@ struct JournalRemindersView: View {
     var body: some View {
         VStack(spacing: 24) {
             VStack(spacing: 6) {
-                Text("Set reminders")
+                Text("journal_set_reminders")
                     .font(.custom("InstrumentSerif-Regular", size: 22))
                     .kerning(-0.22)
                     .foregroundColor(JournalReminderTokens.primaryText)
-                Text("Set recurring notifications to remind yourself to set your intentions and reflect.")
+                Text("journal_reminders_subtitle")
                     .font(.custom("Nunito-Regular", size: 12))
                     .kerning(-0.12)
                     .foregroundColor(JournalReminderTokens.primaryText.opacity(0.9))
@@ -38,7 +38,7 @@ struct JournalRemindersView: View {
 
             VStack(spacing: 20) {
                 timeRow(
-                    label: "Set intentions at",
+                    label: String(localized: "journal_reminders_intentions_at"),
                     hour: $intentionHour,
                     minute: $intentionMinute,
                     period: $intentionPeriod,
@@ -48,7 +48,7 @@ struct JournalRemindersView: View {
                 )
 
                 timeRow(
-                    label: "Write reflections at",
+                    label: String(localized: "journal_reminders_reflections_at"),
                     hour: $reflectionHour,
                     minute: $reflectionMinute,
                     period: $reflectionPeriod,
@@ -70,7 +70,7 @@ struct JournalRemindersView: View {
 
             HStack(spacing: 12) {
                 // Test button (fires notification in 3 seconds)
-                Button("Test", action: sendTestNotification)
+                Button("test", action: sendTestNotification)
                     .buttonStyle(
                         JournalReminderPillButtonStyle(
                             background: JournalReminderTokens.inputBackground,
@@ -82,7 +82,7 @@ struct JournalRemindersView: View {
 
                 Spacer()
 
-                Button("Cancel", action: { onCancel?() })
+                Button("cancel", action: { onCancel?() })
                     .buttonStyle(
                         JournalReminderPillButtonStyle(
                             background: JournalReminderTokens.cancelFill,
@@ -92,7 +92,7 @@ struct JournalRemindersView: View {
                     )
                     .journalHoverable()
 
-                Button("Save", action: saveReminders)
+                Button("save", action: saveReminders)
                     .buttonStyle(
                         JournalReminderPillButtonStyle(
                             background: JournalReminderTokens.saveFill,
@@ -206,8 +206,8 @@ struct JournalRemindersView: View {
 
             // Schedule a test notification in 3 seconds
             let content = UNMutableNotificationContent()
-            content.title = "Test: Set your intentions"
-            content.body = "This is a test notification from Dayflow."
+            content.title = String(localized: "journal_reminders_test_title")
+            content.body = String(localized: "journal_reminders_test_body")
             content.sound = .default
             content.categoryIdentifier = "journal_reminder"
 
@@ -269,7 +269,7 @@ struct JournalRemindersView: View {
 
     private var repeatOnRow: some View {
         HStack(alignment: .center, spacing: 8) {
-            Text("Repeat on")
+            Text("journal_reminders_repeat_on")
                 .font(.custom("Nunito-Regular", size: 14))
                 .kerning(-0.14)
                 .foregroundColor(JournalReminderTokens.primaryText)
@@ -488,7 +488,16 @@ extension JournalRemindersView {
         case pm
 
         var id: String { rawValue }
-        var display: String { rawValue }
+        var display: String {
+            let formatter = Self.periodFormatter
+            return self == .am ? formatter.amSymbol : formatter.pmSymbol
+        }
+
+        private static let periodFormatter: DateFormatter = {
+            let formatter = DateFormatter()
+            formatter.locale = .current
+            return formatter
+        }()
     }
 
     enum Weekday: Int, CaseIterable, Identifiable {
@@ -503,20 +512,11 @@ extension JournalRemindersView {
         var id: Int { rawValue }
 
         var shortLabel: String {
-            switch self {
-            case .sunday, .saturday:
-                return "S"
-            case .monday:
-                return "M"
-            case .tuesday:
-                return "T"
-            case .wednesday:
-                return "W"
-            case .thursday:
-                return "T"
-            case .friday:
-                return "F"
+            let symbols = Calendar.current.veryShortStandaloneWeekdaySymbols
+            if symbols.indices.contains(rawValue) {
+                return symbols[rawValue]
             }
+            return ""
         }
     }
 

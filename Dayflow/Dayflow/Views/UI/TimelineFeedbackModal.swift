@@ -79,12 +79,12 @@ struct TimelineFeedbackModal: View {
     private var formContent: some View {
         VStack(spacing: 16) {
             VStack(spacing: 12) {
-                Text("Thank you!")
+                Text("feedback_thank_you")
                     .font(Font.custom("InstrumentSerif-Regular", size: 18))
                     .foregroundColor(Color(hex: "333333"))
                     .multilineTextAlignment(.center)
 
-                Text("Tell us more about your feedback")
+                Text("feedback_tell_us_more")
                     .font(Font.custom("Nunito", size: 13).weight(.medium))
                     .foregroundColor(Color(hex: "333333"))
                     .multilineTextAlignment(.center)
@@ -139,7 +139,7 @@ struct TimelineFeedbackModal: View {
                                     .fill(shareLogs ? Color(hex: "FF8046") : Color.clear)
                             )
 
-                        Text("I’d like to share this log to the developer to help improve the product.")
+                        Text("feedback_share_log")
                             .font(Font.custom("Nunito", size: 10).weight(.medium))
                             .foregroundColor(Color.black)
                             .fixedSize(horizontal: false, vertical: true)
@@ -151,7 +151,7 @@ struct TimelineFeedbackModal: View {
             }
 
             Button(action: onSubmit) {
-                Text("Submit")
+                Text("submit")
                     .font(Font.custom("Nunito", size: 12).weight(.medium))
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity)
@@ -165,14 +165,14 @@ struct TimelineFeedbackModal: View {
 
     private var thanksContent: some View {
         VStack(spacing: 20) {
-            Text("Thank you for your feedback!")
+            Text("feedback_thank_you_full")
                 .font(Font.custom("InstrumentSerif-Regular", size: 18))
                 .foregroundColor(Color(hex: "333333"))
                 .multilineTextAlignment(.center)
                 .padding(.bottom, 4)
 
             VStack(alignment: .leading, spacing: 12) {
-                Text("If you find that your activities are summarized inaccurately, try editing the descriptions of your categories to improve Dayflow’s accuracy.")
+                Text("feedback_accuracy_tip")
                     .font(Font.custom("Nunito", size: 12).weight(.medium))
                     .foregroundColor(Color(hex: "333333"))
                     .multilineTextAlignment(.leading)

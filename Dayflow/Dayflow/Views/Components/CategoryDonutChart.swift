@@ -43,11 +43,11 @@ struct CategoryTimeData: Identifiable {
         let minutes = totalMinutes % 60
 
         if hours > 0 && minutes > 0 {
-            return "\(hours)h \(minutes)m"
+            return String(format: String(localized: "duration_hours_minutes_abbrev"), hours, minutes)
         } else if hours > 0 {
-            return "\(hours)h"
+            return String(format: String(localized: "duration_hours_abbrev"), hours)
         } else {
-            return "\(minutes)m"
+            return String(format: String(localized: "duration_minutes_abbrev"), minutes)
         }
     }
 }
@@ -140,16 +140,16 @@ struct CategoryDonutChart: View {
 
     private var centerContent: some View {
         VStack(spacing: 4) {
-            Text("TOTAL")
+            Text("chart_total")
                 .font(.custom("Nunito", size: 8).weight(.bold))
                 .foregroundColor(Color(red: 0.65, green: 0.65, blue: 0.65)) // #a5a5a5
 
             VStack(spacing: 0) {
                 let total = formattedTotal
-                Text("\(total.hours) hours")
+                Text(String(format: String(localized: "duration_hours_long"), total.hours))
                     .font(.custom("InstrumentSerif-Regular", size: 16))
                     .foregroundColor(Color(red: 0.2, green: 0.2, blue: 0.2)) // #333333
-                Text("\(total.minutes) minutes")
+                Text(String(format: String(localized: "duration_minutes_long"), total.minutes))
                     .font(.custom("InstrumentSerif-Regular", size: 16))
                     .foregroundColor(Color(red: 0.2, green: 0.2, blue: 0.2))
             }

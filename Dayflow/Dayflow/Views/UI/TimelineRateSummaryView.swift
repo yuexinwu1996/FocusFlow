@@ -14,7 +14,7 @@ enum TimelineRatingDirection: String, Codable, Sendable {
 
 struct TimelineRateSummaryView: View {
 
-    var title: String = "Rate this summary"
+    var title: String = String(localized: "rate_this_summary")
     var isEnabled: Bool = true
     var activityID: String? = nil
     var onRate: ((TimelineRatingDirection) -> Void)? = nil
@@ -81,7 +81,7 @@ struct TimelineRateSummaryView: View {
         }
         .buttonStyle(.plain)
         .contentShape(Rectangle())
-        .accessibilityLabel(direction == .up ? Text("Thumbs up") : Text("Thumbs down"))
+        .accessibilityLabel(direction == .up ? Text("thumbs_up") : Text("thumbs_down"))
     }
 }
 

@@ -176,7 +176,7 @@ struct VideoExpansionOverlay: View {
                         .fontWeight(.semibold)
                 }
                 if let startTime = expansionState.startTime, let endTime = expansionState.endTime {
-                    Text("\(timeFormatter.string(from: startTime)) to \(timeFormatter.string(from: endTime))")
+                    Text(String(format: String(localized: "video_time_range"), timeFormatter.string(from: startTime), timeFormatter.string(from: endTime)))
                         .font(.caption)
                         .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
                 }
@@ -240,7 +240,7 @@ struct VideoExpansionOverlay: View {
                 }
                 .buttonStyle(ScaleButtonStyle())
                 .padding(12)
-                .accessibilityLabel("Playback speed")
+                .accessibilityLabel(Text("playback_speed"))
                 .transition(
                     .asymmetric(
                         insertion: .opacity.combined(with: .scale(scale: 0.9, anchor: .bottomTrailing)),
@@ -393,7 +393,10 @@ struct VideoSegment: Identifiable {
     var durationString: String {
         let minutes = Int(duration / 60)
         let seconds = Int(duration) % 60
-        return minutes > 0 ? "\(minutes) min" : "\(seconds) sec"
+        if minutes > 0 {
+            return String(format: String(localized: "duration_minutes_short_label"), minutes)
+        }
+        return String(format: String(localized: "duration_seconds_short_label"), seconds)
     }
 }
 
@@ -572,7 +575,7 @@ struct VideoPlayerModal: View {
                                 .fontWeight(.semibold)
                         }
                         if let startTime = startTime, let endTime = endTime {
-                            Text("\(timeFormatter.string(from: startTime)) to \(timeFormatter.string(from: endTime))")
+                            Text(String(format: String(localized: "video_time_range"), timeFormatter.string(from: startTime), timeFormatter.string(from: endTime)))
                                 .font(.caption)
                                 .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
                         }
@@ -653,7 +656,7 @@ struct VideoPlayerModal: View {
                                 }
                                 .buttonStyle(ScaleButtonStyle())
                                 .padding(12)
-                                .accessibilityLabel("Playback speed")
+                                .accessibilityLabel(Text("playback_speed"))
                                 .transition(
                                     .asymmetric(
                                         insertion: .opacity.combined(with: .scale(scale: 0.9, anchor: .bottomTrailing)),

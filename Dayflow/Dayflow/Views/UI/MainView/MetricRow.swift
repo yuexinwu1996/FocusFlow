@@ -13,7 +13,7 @@ struct MetricRow: View {
                 .foregroundColor(Color(red: 0.45, green: 0.45, blue: 0.45))
 
             HStack {
-                Text("\(value)%")
+                Text(String(format: String(localized: "metric_percentage"), "\(value)"))
                     .font(.title3)
                     .fontWeight(.semibold)
 

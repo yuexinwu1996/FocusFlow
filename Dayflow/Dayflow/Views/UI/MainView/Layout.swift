@@ -351,18 +351,18 @@ extension MainView {
 
             // Recording toggle (now inline with header)
             HStack(spacing: 4) {
-                Text("Record")
+                Text("timeline_record")
                     .font(
                         Font.custom("Nunito", size: 12)
                             .weight(.medium)
                     )
                     .foregroundColor(Color(red: 0.62, green: 0.44, blue: 0.36))
 
-                Toggle("Record", isOn: $appState.isRecording)
+                Toggle("timeline_record", isOn: $appState.isRecording)
                     .labelsHidden()
                     .toggleStyle(SunriseGlassPillToggleStyle())
                     .scaleEffect(0.7)
-                    .accessibilityLabel(Text("Recording"))
+                    .accessibilityLabel(Text("timeline_recording"))
             }
         }
         .padding(.horizontal, 10)
@@ -554,7 +554,7 @@ extension MainView {
         if showCategoryEditor {
             ColorOrganizerRoot(
                 presentationStyle: .sheet,
-                onDismiss: { showCategoryEditor = false }, completionButtonTitle: "Save", showsTitles: true
+                onDismiss: { showCategoryEditor = false }, completionButtonTitle: "save", showsTitles: true
             )
             .environmentObject(categoryStore)
             // Removed .contentShape(Rectangle()) and .onTapGesture to allow keyboard input
@@ -580,10 +580,10 @@ extension MainView {
         let textColor = Color(red: 0.84, green: 0.65, blue: 0.52)
 
         return HStack(spacing: 4) {
-            Text("\(hours) hours")
+            Text(String(format: String(localized: "timeline_hours"), "\(hours)"))
                 .font(Font.custom("Nunito", size: 10).weight(.bold))
                 .foregroundColor(textColor)
-            Text("tracked this week")
+            Text("tracked_this_week")
                 .font(Font.custom("Nunito", size: 10).weight(.regular))
                 .foregroundColor(textColor)
         }
@@ -615,7 +615,7 @@ extension MainView {
                     HStack(spacing: 4) {
                         Image(systemName: "checkmark")
                             .font(.system(size: 10, weight: .medium))
-                        Text("Copied")
+                        Text("timeline_copied")
                             .font(Font.custom("Nunito", size: 10).weight(.medium))
                     }
                     .transition(transition)
@@ -623,7 +623,7 @@ extension MainView {
                     HStack(spacing: 4) {
                         Image(systemName: "doc.on.doc")
                             .font(.system(size: 10, weight: .medium))
-                        Text("Copy timeline")
+                        Text("timeline_copy")
                             .font(Font.custom("Nunito", size: 10).weight(.medium))
                     }
                     .transition(transition)
@@ -642,7 +642,7 @@ extension MainView {
         }
         .buttonStyle(ShrinkButtonStyle())
         .disabled(copyTimelineState == .copying)
-        .accessibilityLabel(Text("Copy timeline to clipboard"))
+        .accessibilityLabel(Text("timeline_copy_tooltip"))
     }
 }
 

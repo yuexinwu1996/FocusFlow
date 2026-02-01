@@ -90,7 +90,7 @@ struct WhatsNewView: View {
         VStack(alignment: .leading, spacing: 18) {
             HStack(alignment: .top) {
                 VStack(alignment: .leading, spacing: 6) {
-                    Text("What's New in \(releaseNote.version) 🎉")
+                    Text(String(format: String(localized: "whats_new_title"), releaseNote.version))
                         .font(.custom("InstrumentSerif-Regular", size: 32))
                         .foregroundColor(.black.opacity(0.9))
 
@@ -111,7 +111,7 @@ struct WhatsNewView: View {
                         .clipShape(Circle())
                 }
                 .buttonStyle(PlainButtonStyle())
-                .accessibilityLabel("Close")
+                .accessibilityLabel(Text("close"))
                 .keyboardShortcut(.cancelAction)
             }
 
@@ -166,7 +166,7 @@ struct WhatsNewView_Previews: PreviewProvider {
                 )
                 .frame(width: 1200, height: 800)
             } else {
-                Text("Configure WhatsNewConfiguration.configuredRelease to preview.")
+                Text("whats_new_preview_notice")
                     .frame(width: 780, height: 400)
             }
         }

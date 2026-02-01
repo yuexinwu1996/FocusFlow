@@ -93,17 +93,19 @@ struct LongestFocusCard: View {
     }
 
     private var formattedDuration: String {
-        guard let longest = longestBlock else { return "0 minutes" }
+        guard let longest = longestBlock else {
+            return String(format: String(localized: "duration_minutes_long"), 0)
+        }
         let totalMinutes = Int(longest.duration / 60)
         let hours = totalMinutes / 60
         let minutes = totalMinutes % 60
 
         if hours > 0 && minutes > 0 {
-            return "\(hours) hours \(minutes) minutes"
+            return String(format: String(localized: "duration_hours_minutes_long"), hours, minutes)
         } else if hours > 0 {
-            return "\(hours) hours"
+            return String(format: String(localized: "duration_hours_long"), hours)
         } else {
-            return "\(minutes) minutes"
+            return String(format: String(localized: "duration_minutes_long"), minutes)
         }
     }
 
@@ -121,7 +123,7 @@ struct LongestFocusCard: View {
 
     var body: some View {
         ZStack(alignment: .topLeading) {
-            Text("Longest focus duration")
+            Text("longest_focus_duration")
                 .font(.custom("InstrumentSerif-Regular", size: 16))
                 .foregroundColor(Design.titleColor)
                 .offset(x: Design.titleX, y: Design.titleY)

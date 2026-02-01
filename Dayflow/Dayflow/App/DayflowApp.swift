@@ -193,7 +193,7 @@ struct DayflowApp: App {
             // Add custom menu items after the app info section
             CommandGroup(after: .appInfo) {
                 Divider()
-                Button("Reset Onboarding") {
+                Button("app_menu_reset_onboarding") {
                     // Reset the onboarding flag
                     UserDefaults.standard.set(false, forKey: "didOnboard")
                     // Reset the saved onboarding step to start from beginning
@@ -211,11 +211,11 @@ struct DayflowApp: App {
             
             // Add Sparkle's update menu item
             CommandGroup(after: .appInfo) {
-                Button("Check for Updates…") {
+                Button("app_menu_check_updates") {
                     updaterManager.checkForUpdates(showUI: true)
                 }
 
-                Button("View Release Notes") {
+                Button("app_menu_view_release_notes") {
                     // Activate the app and bring to foreground
                     NSApp.activate(ignoringOtherApps: true)
 

@@ -88,7 +88,7 @@ struct TimelineReviewSummaryCard: View {
 
     private var header: some View {
         VStack(alignment: .leading, spacing: Design.headerSpacing) {
-            Text("Your review")
+            Text("your_review")
                 .font(.custom("InstrumentSerif-Regular", size: 20))
                 .foregroundColor(Design.titleColor)
 
@@ -105,8 +105,8 @@ struct TimelineReviewSummaryCard: View {
 
     private var subtitle: Text {
         let baseText = summary.hasData
-            ? "Last reviewed at \(formattedLastReviewedAt)."
-            : "No reviews yet."
+            ? String(format: String(localized: "review_last_reviewed_at"), formattedLastReviewedAt)
+            : String(localized: "review_no_reviews")
         var composed = Text(baseText)
             .foregroundColor(Design.subtitleColor)
 
@@ -114,11 +114,11 @@ struct TimelineReviewSummaryCard: View {
             return composed
         }
 
-        let reviewText = "Review \(reviewCountText)"
+        let reviewText = String(format: String(localized: "review_action_prefix"), reviewCountText)
         composed = composed
-            + Text(" \(reviewText)")
+            + Text(reviewText)
                 .foregroundColor(Design.linkColor)
-            + Text(" to update your data.")
+            + Text("review_action_suffix")
                 .foregroundColor(Design.subtitleColor)
 
         return composed
@@ -258,11 +258,11 @@ struct TimelineReviewSummaryCard: View {
         let minutes = totalMinutes % 60
 
         if hours > 0 && minutes > 0 {
-            return "\(hours)h \(minutes)m"
+            return String(format: String(localized: "duration_hours_minutes_abbrev"), hours, minutes)
         } else if hours > 0 {
-            return "\(hours)h"
+            return String(format: String(localized: "duration_hours_abbrev"), hours)
         } else {
-            return "\(minutes)m"
+            return String(format: String(localized: "duration_minutes_abbrev"), minutes)
         }
     }
 
@@ -272,7 +272,10 @@ struct TimelineReviewSummaryCard: View {
     }
 
     private var reviewCountText: String {
-        cardsToReviewCount == 1 ? "1 card" : "\(cardsToReviewCount) cards"
+        if cardsToReviewCount == 1 {
+            return String(localized: "review_count_one")
+        }
+        return String(format: String(localized: "review_count_many"), cardsToReviewCount)
     }
 
     private static let timeFormatter: DateFormatter = {

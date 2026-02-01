@@ -337,7 +337,7 @@ extension JournalDayView {
                             .foregroundStyle(JournalDayTokens.reminderText)
                             .frame(width: 16, height: 16)
 
-                        Text("Set reminders")
+                        Text("journal_set_reminders")
                             .font(.custom("Nunito-SemiBold", size: 12))
                             .foregroundStyle(JournalDayTokens.reminderText)
                     }
@@ -357,16 +357,16 @@ private struct DebugPanelView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text("Debug")
+            Text("journal_debug")
                 .font(.system(size: 9, weight: .bold))
                 .foregroundStyle(.white.opacity(0.7))
-            Button("🔒 Lock") { isJournalUnlocked = false }.font(.system(size: 9))
-            Button("🔄 Reset") { hasCompletedOnboarding = false; isJournalUnlocked = false }.font(.system(size: 9))
+            Button("journal_debug_lock") { isJournalUnlocked = false }.font(.system(size: 9))
+            Button("journal_debug_reset") { hasCompletedOnboarding = false; isJournalUnlocked = false }.font(.system(size: 9))
             Divider().background(Color.white.opacity(0.3))
-            Button("→ Intro") { manager.flowState = .intro }.font(.system(size: 9))
-            Button("→ Summary") { manager.flowState = .summary }.font(.system(size: 9))
-            Button("→ Intents") { manager.flowState = .intentionsEdit }.font(.system(size: 9))
-            Button("→ Prompt") { manager.flowState = .reflectionPrompt }.font(.system(size: 9))
+            Button("journal_debug_intro") { manager.flowState = .intro }.font(.system(size: 9))
+            Button("journal_debug_summary") { manager.flowState = .summary }.font(.system(size: 9))
+            Button("journal_debug_intents") { manager.flowState = .intentionsEdit }.font(.system(size: 9))
+            Button("journal_debug_prompt") { manager.flowState = .reflectionPrompt }.font(.system(size: 9))
         }
         .frame(maxWidth: 100)
         .padding(6)
@@ -544,7 +544,7 @@ private struct IntentionsEditForm: View {
                 .matchedGeometryEffect(id: "card_bg", in: namespace)
 
             HStack(spacing: 12) {
-                Button("Save", action: onSave)
+                Button("save", action: onSave)
                     .buttonStyle(JournalPillButtonStyle(horizontalPadding: 22, verticalPadding: 9))
             }
             .frame(height: 46)
@@ -585,16 +585,18 @@ private struct IntentionsEditForm: View {
         )
     }
 
-    private static let intentionsPlaceholders = [
-        "What does a good day look like?",
-        "If today goes well, what will you have done?"
-    ]
+    private static var intentionsPlaceholders: [String] {
+        [
+            String(localized: "journal_intentions_placeholder_1"),
+            String(localized: "journal_intentions_placeholder_2")
+        ]
+    }
 
-    @State private var intentionsPlaceholder: String = intentionsPlaceholders.randomElement()!
+    @State private var intentionsPlaceholder: String = Self.intentionsPlaceholders.randomElement()!
 
     private var sectionIntentions: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("Today's intentions")
+            Text("journal_intentions")
                 .font(.custom("InstrumentSerif-Regular", size: 22))
                 .foregroundStyle(JournalDayTokens.sectionHeader)
                 .padding(.leading, titleLeading)
@@ -611,7 +613,7 @@ private struct IntentionsEditForm: View {
     private var sectionNotes: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack(spacing: 6) {
-                Text("Notes for today")
+                Text("journal_notes")
                     .font(.custom("InstrumentSerif-Regular", size: 22))
                     .foregroundStyle(JournalDayTokens.sectionHeader)
                     .padding(.leading, titleLeading)
@@ -619,7 +621,7 @@ private struct IntentionsEditForm: View {
 
             JournalTextEditor(
                 text: $notes,
-                placeholder: "What mindset do you want to carry today?",
+                placeholder: String(localized: "journal_notes_placeholder"),
                 minLines: 3
             )
         }
@@ -628,7 +630,7 @@ private struct IntentionsEditForm: View {
     private var sectionGoals: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack(spacing: 6) {
-                Text("Long term goals")
+                Text("journal_long_term_goals")
                     .font(.custom("InstrumentSerif-Regular", size: 22))
                     .foregroundStyle(JournalDayTokens.sectionHeader)
                     .padding(.leading, titleLeading)
@@ -636,7 +638,7 @@ private struct IntentionsEditForm: View {
 
             JournalTextEditor(
                 text: $goals,
-                placeholder: "What are you working towards?",
+                placeholder: String(localized: "journal_goals_placeholder"),
                 minLines: 3
             )
         }
@@ -736,10 +738,10 @@ private struct JournalLeftCardView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading, spacing: 18) {
-                section("Today's intentions") {
+                section("journal_intentions") {
                     JournalDayBulletList(items: intentions)
                 }
-                section("Notes for the day") {
+                section("journal_notes_for_day") {
                     Text(notes.isEmpty ? "—" : notes)
                         .font(.custom("Nunito-Regular", size: 15))
                         .foregroundStyle(notes.isEmpty ? JournalDayTokens.bodyText.opacity(0.4) : JournalDayTokens.bodyText)
@@ -748,7 +750,7 @@ private struct JournalLeftCardView: View {
                     .foregroundStyle(JournalDayTokens.divider)
                     .overlay(JournalDayTokens.divider)
                     .padding(.vertical, 6)
-                section("Long term goals") {
+                section("journal_long_term_goals") {
                     JournalDayBulletList(items: goals)
                 }
                 Spacer(minLength: 0)
@@ -786,7 +788,7 @@ private struct JournalLeftCardView: View {
     }
 
     @ViewBuilder
-    private func section(_ title: String, content: () -> some View) -> some View {
+    private func section(_ title: LocalizedStringKey, content: () -> some View) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(title)
                 .font(.custom("InstrumentSerif-Regular", size: 20))
@@ -835,11 +837,11 @@ private struct ReflectionPromptCard: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Today's reflections")
+            Text("journal_reflections")
                 .font(.custom("InstrumentSerif-Regular", size: 22))
                 .foregroundStyle(JournalDayTokens.sectionHeader.opacity(0.4))
 
-            Text("Return near the end of your day to reflect on your intentions. Let Dayflow generate a narrative summary based on the activities on your Timeline.")
+            Text("journal_reflection_prompt")
                 .font(.custom("Nunito-Regular", size: 15))
                 .foregroundStyle(JournalDayTokens.bodyText.opacity(0.65))
                 .fixedSize(horizontal: false, vertical: true)
@@ -849,7 +851,7 @@ private struct ReflectionPromptCard: View {
             if isEnabled {
                 HStack {
                     Spacer()
-                    Button("Reflect on your day", action: onReflect)
+                    Button("journal_reflect_action", action: onReflect)
                         .buttonStyle(JournalPillButtonStyle(horizontalPadding: 20, verticalPadding: 10))
                 }
             }
@@ -865,7 +867,7 @@ private struct ReflectionEditorCard: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Your reflections")
+            Text("journal_your_reflections")
                 .font(.custom("InstrumentSerif-Regular", size: 22))
                 .foregroundStyle(JournalDayTokens.sectionHeader)
 
@@ -880,13 +882,13 @@ private struct ReflectionEditorCard: View {
             Spacer(minLength: 0)
 
             HStack(spacing: 10) {
-                Button("Save", action: onSave)
+                Button("save", action: onSave)
                     .buttonStyle(JournalPillButtonStyle(horizontalPadding: 18, verticalPadding: 8))
                     .disabled(isSaveDisabled)
                     .opacity(isSaveDisabled ? 0.55 : 1)
                     .animation(.easeInOut(duration: 0.2), value: isSaveDisabled)
 
-                Button("Skip", action: onSkip)
+                Button("skip", action: onSkip)
                     .buttonStyle(.plain)
                     .foregroundStyle(JournalDayTokens.bodyText.opacity(0.6))
             }
@@ -906,7 +908,7 @@ private struct ReflectionSavedCard: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Your reflections")
+            Text("journal_your_reflections")
                 .font(.custom("InstrumentSerif-Regular", size: 22))
                 .foregroundStyle(JournalDayTokens.sectionHeader)
 
@@ -920,7 +922,7 @@ private struct ReflectionSavedCard: View {
                         .padding(.horizontal, 2)
                 }
             } else {
-                Text("Return near the end of your day to reflect on your intentions.")
+                Text("journal_reflection_reminder")
                     .font(.custom("Nunito-Regular", size: 15))
                     .foregroundStyle(JournalDayTokens.bodyText.opacity(0.65))
             }
@@ -932,23 +934,23 @@ private struct ReflectionSavedCard: View {
                 if isLoading {
                     HStack(spacing: 8) {
                         ProgressView().scaleEffect(0.8)
-                        Text("Generating summary...").font(.custom("Nunito-Regular", size: 14)).foregroundStyle(JournalDayTokens.bodyText.opacity(0.7))
+                        Text("journal_generating").font(.custom("Nunito-Regular", size: 14)).foregroundStyle(JournalDayTokens.bodyText.opacity(0.7))
                     }
                 } else if let error = errorMessage {
                     VStack(alignment: .trailing, spacing: 8) {
                         Text(error).font(.custom("Nunito-Regular", size: 13)).foregroundStyle(Color.red.opacity(0.8)).multilineTextAlignment(.trailing)
                         HStack(spacing: 12) {
-                            Button("Dismiss") { onDismissError?() }
+                            Button("dismiss") { onDismissError?() }
                                 .buttonStyle(.plain).font(.custom("Nunito-Regular", size: 13)).foregroundStyle(JournalDayTokens.bodyText.opacity(0.6))
-                            Button("Try again", action: onSummarize)
+                            Button("try_again", action: onSummarize)
                                 .buttonStyle(JournalPillButtonStyle(horizontalPadding: 18, verticalPadding: 8))
                         }
                     }
                 } else if canSummarize {
-                    Button("Summarize with Dayflow", action: onSummarize)
+                    Button("journal_summarize_with_dayflow", action: onSummarize)
                         .buttonStyle(JournalPillButtonStyle(horizontalPadding: 24, verticalPadding: 11))
                 } else {
-                    Text("Need at least 1 hour of timeline activity to summarize")
+                    Text("journal_summary_minimum")
                         .font(.custom("Nunito-Regular", size: 13))
                         .foregroundStyle(JournalDayTokens.bodyText.opacity(0.5))
                 }
@@ -965,7 +967,7 @@ private struct SummaryCard: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 22) {
             VStack(alignment: .leading, spacing: 8) {
-                Text("Dayflow summary")
+                Text("journal_summary_title")
                     .font(.custom("InstrumentSerif-Regular", size: 22))
                     .foregroundStyle(JournalDayTokens.sectionHeader)
 
@@ -973,14 +975,14 @@ private struct SummaryCard: View {
                     WetInkText(text: summary, font: .custom("Nunito-Regular", size: 17))
                         .fixedSize(horizontal: false, vertical: true)
                 } else {
-                    Text("Summarizing your day recorded on your timeline…")
+                    Text("journal_summarizing")
                         .font(.custom("Nunito-Regular", size: 15))
                         .foregroundStyle(JournalDayTokens.bodyText.opacity(0.65))
                 }
             }
 
             VStack(alignment: .leading, spacing: 8) {
-                Text("Your reflections")
+                Text("journal_your_reflections")
                     .font(.custom("InstrumentSerif-Regular", size: 22))
                     .foregroundStyle(JournalDayTokens.sectionHeader)
 
@@ -990,7 +992,7 @@ private struct SummaryCard: View {
                         .foregroundStyle(JournalDayTokens.bodyText)
                         .fixedSize(horizontal: false, vertical: true)
                 } else {
-                    Text("Return near the end of your day to reflect on your intentions.")
+                    Text("journal_reflection_reminder")
                         .font(.custom("Nunito-Regular", size: 15))
                         .foregroundStyle(JournalDayTokens.bodyText.opacity(0.65))
                 }
@@ -998,7 +1000,7 @@ private struct SummaryCard: View {
 
             if let onRegenerate {
                 Button(action: onRegenerate) {
-                    Text("Regenerate summary")
+                    Text("journal_regenerate")
                         .font(.custom("Nunito-Regular", size: 13))
                         .foregroundStyle(JournalDayTokens.sectionHeader)
                 }
@@ -1018,11 +1020,11 @@ private struct IntroView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Text("Set daily intentions and track your progress")
+            Text("journal_intro_title")
                 .font(.custom("InstrumentSerif-Regular", size: 34))
                 .foregroundStyle(JournalDayTokens.sectionHeader)
                 .multilineTextAlignment(.center)
-            Text("Dayflow helps you track your daily and longer term pursuits, gives you the space to reflect, and generates a summary of each day.")
+            Text("journal_intro_description")
                 .font(.custom("Nunito-Regular", size: 16))
                 .foregroundStyle(JournalDayTokens.bodyText)
                 .multilineTextAlignment(.center)
@@ -1035,7 +1037,7 @@ private struct IntroView: View {
                 .buttonStyle(JournalPillButtonStyle(horizontalPadding: 28, verticalPadding: 10))
                 .padding(.top, 16)
             } else {
-                Text("No journal entry for this day")
+                Text("journal_no_entry")
                     .font(.custom("Nunito-Regular", size: 14))
                     .foregroundStyle(JournalDayTokens.bodyText.opacity(0.5))
                     .padding(.top, 16)
@@ -1051,7 +1053,7 @@ private struct SummaryView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Text("Summary from yesterday")
+            Text("journal_summary_from_yesterday")
                 .font(.custom("InstrumentSerif-Regular", size: 30))
                 .foregroundStyle(JournalDayTokens.sectionHeader)
 
@@ -1063,7 +1065,7 @@ private struct SummaryView: View {
             .frame(maxHeight: 300)
 
             Button(action: onTapCTA) {
-                Text("Set today's intentions")
+                Text("journal_set_intentions")
                     .font(.custom("Nunito-SemiBold", size: 17))
             }
             .buttonStyle(JournalPillButtonStyle(horizontalPadding: 28, verticalPadding: 10))

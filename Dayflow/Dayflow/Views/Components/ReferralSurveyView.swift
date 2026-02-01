@@ -17,7 +17,7 @@ struct ReferralSurveyView: View {
 
     init(
         prompt: String,
-        submitLabel: String = "Submit",
+        submitLabel: String = String(localized: "submit"),
         showsThankYou: Bool = false,
         showSubmitButton: Bool = true,
         selectedReferral: Binding<ReferralOption?>? = nil,
@@ -63,7 +63,7 @@ struct ReferralSurveyView: View {
             detailField
 
             if showsThankYou && hasSubmitted {
-                Label("Thanks for letting me know!", systemImage: "checkmark.circle.fill")
+                Label("referral_thanks", systemImage: "checkmark.circle.fill")
                     .font(.custom("Nunito", size: 14))
                     .foregroundColor(Color(red: 0.25, green: 0.17, blue: 0))
                     .padding(.top, 4)

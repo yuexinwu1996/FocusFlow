@@ -63,12 +63,12 @@ struct JournalView: View {
 
             // Header: "Dayflow Journal" with BETA badge
             HStack(alignment: .top, spacing: 4) {
-                Text("Dayflow Journal")
+                Text("journal_title")
                     .font(.custom("InstrumentSerif-Italic", size: 38))
                     .foregroundColor(Color(red: 0.35, green: 0.22, blue: 0.12))
 
                 // BETA badge
-                Text("BETA")
+                Text("journal_beta")
                     .font(.custom("Nunito-Bold", size: 11))
                     .foregroundColor(.white)
                     .padding(.horizontal, 8)
@@ -123,7 +123,7 @@ struct JournalView: View {
             // Overlay content: title, text field, button (anchored to bottom)
             VStack(spacing: 16) {
                 // Title
-                Text("Enter access code")
+                Text("journal_enter_access_code")
                     .font(.custom("Nunito-SemiBold", size: 20))
                     .foregroundColor(Color(red: 0.85, green: 0.45, blue: 0.25))
 
@@ -145,7 +145,7 @@ struct JournalView: View {
 
                 // Submit button
                 Button(action: validateCode) {
-                    Text("Get early access")
+                    Text("journal_get_early_access")
                         .font(.custom("Nunito-SemiBold", size: 15))
                         .foregroundColor(Color(red: 0.35, green: 0.22, blue: 0.12))
                         .padding(.horizontal, 28)
@@ -227,13 +227,13 @@ private struct JournalOnboardingView: View {
             Spacer()
 
             // Title
-            Text("Set your intentions today")
+            Text("journal_set_intentions_today")
                 .font(.custom("InstrumentSerif-Regular", size: 42))
                 .foregroundColor(Color(red: 0.85, green: 0.45, blue: 0.15))
                 .multilineTextAlignment(.center)
 
             // Description
-            Text("Dayflow helps you track your daily and longer term goals, gives you the space to reflect, and generates a summary of each day.")
+            Text("journal_overview_description")
                 .font(.custom("Nunito-Regular", size: 16))
                 .foregroundColor(Color(red: 0.25, green: 0.15, blue: 0.10).opacity(0.8))
                 .multilineTextAlignment(.center)
@@ -244,7 +244,7 @@ private struct JournalOnboardingView: View {
 
             // Start onboarding button
             Button(action: onStartOnboarding) {
-                Text("Start onboarding")
+                Text("journal_start_onboarding")
                     .font(.custom("Nunito-SemiBold", size: 16))
                     .foregroundColor(Color(red: 0.35, green: 0.22, blue: 0.12))
                     .padding(.horizontal, 32)

@@ -20,17 +20,17 @@ struct SettingsView: View {
 
         var title: String {
             switch self {
-            case .storage: return "Storage"
-            case .providers: return "Providers"
-            case .other: return "Other"
+            case .storage: return String(localized: "settings_tab_storage")
+            case .providers: return String(localized: "settings_tab_providers")
+            case .other: return String(localized: "settings_tab_other")
             }
         }
 
         var subtitle: String {
             switch self {
-            case .storage: return "Recording status and disk usage"
-            case .providers: return "Manage LLM providers and customize prompts"
-            case .other: return "General preferences & support"
+            case .storage: return String(localized: "settings_storage_subtitle")
+            case .providers: return String(localized: "settings_providers_subtitle")
+            case .other: return String(localized: "settings_other_subtitle")
             }
         }
     }
@@ -139,6 +139,17 @@ struct SettingsView: View {
     // Debug options
     @AppStorage("showJournalDebugPanel") private var showJournalDebugPanel = false
     @AppStorage("showDockIcon") private var showDockIcon = true
+
+    // Language preference
+    @State private var selectedLanguage: String = {
+        let languages = UserDefaults.standard.array(forKey: "AppleLanguages") as? [String] ?? []
+        if let first = languages.first {
+            if first.hasPrefix("zh") { return "zh-Hans" }
+            return "en"
+        }
+        return Locale.current.language.languageCode?.identifier ?? "en"
+    }()
+    @State private var showLanguageRestartAlert = false
 
     // Providers – debug log copy feedback
 
@@ -257,15 +268,15 @@ struct SettingsView: View {
             .alert(isPresented: $showLimitConfirmation) {
                 guard let pending = pendingLimit,
                       Self.storageOptions.indices.contains(pending.index) else {
-                    return Alert(title: Text("Adjust storage limit"), dismissButton: .default(Text("OK")))
+                    return Alert(title: Text("storage_adjust_limit"), dismissButton: .default(Text("ok")))
                 }
 
                 let option = Self.storageOptions[pending.index]
                 let categoryName = pending.category.displayName
                 return Alert(
-                    title: Text("Lower \(categoryName) limit?"),
-                    message: Text("Reducing the \(categoryName) limit to \(option.label) will immediately delete the oldest \(categoryName) data to stay under the new cap."),
-                    primaryButton: .destructive(Text("Confirm")) {
+                    title: Text(String(format: String(localized: "storage_lower_limit_title"), categoryName)),
+                    message: Text(String(format: String(localized: "storage_lower_limit_msg"), categoryName, option.label, categoryName)),
+                    primaryButton: .destructive(Text("confirm")) {
                         applyLimit(for: pending.category, index: pending.index)
                     },
                     secondaryButton: .cancel {
@@ -300,12 +311,12 @@ struct SettingsView: View {
 
     private var sidebar: some View {
         VStack(alignment: .leading, spacing: 18) {
-            Text("Settings")
+            Text("settings_title")
                 .font(.custom("InstrumentSerif-Regular", size: 42))
                 .foregroundColor(.black.opacity(0.9))
                 .padding(.leading, 10)
 
-            Text("Manage how Dayflow runs")
+            Text("settings_subtitle")
                 .font(.custom("Nunito", size: 14))
                 .foregroundColor(.black.opacity(0.55))
                 .padding(.leading, 10)
@@ -318,7 +329,7 @@ struct SettingsView: View {
             Spacer()
 
             VStack(alignment: .leading, spacing: 12) {
-                Text("Dayflow v\(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "")")
+                Text(String(format: String(localized: "settings_version"), Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""))
                     .font(.custom("Nunito", size: 12))
                     .foregroundColor(.black.opacity(0.45))
                     .padding(.leading, 10)
@@ -326,7 +337,7 @@ struct SettingsView: View {
                     NotificationCenter.default.post(name: .showWhatsNew, object: nil)
                 } label: {
                     HStack(spacing: 6) {
-                        Text("View release notes")
+                        Text("settings_release_notes")
                         Image(systemName: "arrow.up.right")
                             .font(.system(size: 11, weight: .medium))
                     }
@@ -458,7 +469,7 @@ struct SettingsView: View {
                         .disabled(isRefreshingStorage)
 
                         if let last = lastStorageCheck {
-                            Text("Last checked \(relativeDate(last))")
+                            Text(String(format: String(localized: "settings_last_checked"), relativeDate(last)))
                                 .font(.custom("Nunito", size: 12))
                                 .foregroundColor(.black.opacity(0.45))
                         }
@@ -627,7 +638,7 @@ struct SettingsView: View {
                         content: {
                             HStack(spacing: 8) {
                                 Image(systemName: "slider.horizontal.3")
-                                Text("Edit configuration")
+                                Text("provider_edit_config")
                                     .font(.custom("Nunito", size: 13))
                             }
                             .frame(minWidth: 160)
@@ -698,7 +709,7 @@ struct SettingsView: View {
                         )
                     default:
                         VStack(alignment: .leading, spacing: 8) {
-                            Text("Dayflow Pro diagnostics coming soon")
+                            Text("provider_diagnostics_soon")
                                 .font(.custom("Nunito", size: 13))
                                 .foregroundColor(.black.opacity(0.55))
                         }
@@ -741,7 +752,7 @@ struct SettingsView: View {
 
     private var geminiPromptCustomizationView: some View {
         VStack(alignment: .leading, spacing: 22) {
-            Text("Overrides apply only when their toggle is on. Unchecked sections fall back to Dayflow's defaults.")
+            Text("provider_overrides_note")
                 .font(.custom("Nunito", size: 12))
                 .foregroundColor(.black.opacity(0.55))
                 .fixedSize(horizontal: false, vertical: true)
@@ -777,7 +788,7 @@ struct SettingsView: View {
                     content: {
                         HStack(spacing: 8) {
                             Image(systemName: "arrow.counterclockwise")
-                            Text("Reset to Dayflow defaults")
+                            Text("provider_reset_defaults")
                                 .font(.custom("Nunito", size: 13))
                         }
                         .padding(.horizontal, 2)
@@ -796,7 +807,7 @@ struct SettingsView: View {
 
     private var ollamaPromptCustomizationView: some View {
         VStack(alignment: .leading, spacing: 22) {
-            Text("Customize the local model prompts for summary and title generation.")
+            Text("provider_customize_local")
                 .font(.custom("Nunito", size: 12))
                 .foregroundColor(.black.opacity(0.55))
                 .fixedSize(horizontal: false, vertical: true)
@@ -824,7 +835,7 @@ struct SettingsView: View {
                     content: {
                         HStack(spacing: 8) {
                             Image(systemName: "arrow.counterclockwise")
-                            Text("Reset to Dayflow defaults")
+                            Text("provider_reset_defaults")
                                 .font(.custom("Nunito", size: 13))
                         }
                         .padding(.horizontal, 2)
@@ -843,7 +854,7 @@ struct SettingsView: View {
 
     private var chatCLIPromptCustomizationView: some View {
         VStack(alignment: .leading, spacing: 22) {
-            Text("Overrides apply only when their toggle is on. Unchecked sections fall back to Dayflow's defaults.")
+            Text("provider_overrides_note")
                 .font(.custom("Nunito", size: 12))
                 .foregroundColor(.black.opacity(0.55))
                 .fixedSize(horizontal: false, vertical: true)
@@ -879,7 +890,7 @@ struct SettingsView: View {
                     content: {
                         HStack(spacing: 8) {
                             Image(systemName: "arrow.counterclockwise")
-                            Text("Reset to Dayflow defaults")
+                            Text("provider_reset_defaults")
                                 .font(.custom("Nunito", size: 13))
                         }
                         .padding(.horizontal, 2)
@@ -1020,52 +1031,84 @@ struct SettingsView: View {
         VStack(alignment: .leading, spacing: 28) {
             timelineExportCard
 
-            SettingsCard(title: "App preferences", subtitle: "General toggles and telemetry settings") {
+            SettingsCard(title: String(localized: "settings_app_preferences"), subtitle: String(localized: "settings_app_preferences_subtitle")) {
                 VStack(alignment: .leading, spacing: 14) {
                     Toggle(isOn: Binding(
                         get: { launchAtLoginManager.isEnabled },
                         set: { launchAtLoginManager.setEnabled($0) }
                     )) {
-                        Text("Launch Dayflow at login")
+                        Text("settings_launch_login")
                             .font(.custom("Nunito", size: 13))
                             .foregroundColor(.black.opacity(0.7))
                     }
                     .toggleStyle(.switch)
 
-                    Text("Keeps the menu bar controller running right after you sign in so capture can resume instantly.")
+                    Text("settings_launch_subtitle")
                         .font(.custom("Nunito", size: 11.5))
                         .foregroundColor(.black.opacity(0.5))
 
                     Toggle(isOn: $analyticsEnabled) {
-                        Text("Share crash reports and anonymous usage data")
+                        Text("settings_share_analytics")
                             .font(.custom("Nunito", size: 13))
                             .foregroundColor(.black.opacity(0.7))
                     }
                     .toggleStyle(.switch)
 
                     Toggle(isOn: $showJournalDebugPanel) {
-                        Text("Show Journal debug panel")
+                        Text("settings_show_journal_debug")
                             .font(.custom("Nunito", size: 13))
                             .foregroundColor(.black.opacity(0.7))
                     }
                     .toggleStyle(.switch)
 
                     Toggle(isOn: $showDockIcon) {
-                        Text("Show Dock icon")
+                        Text("settings_show_dock_icon")
                             .font(.custom("Nunito", size: 13))
                             .foregroundColor(.black.opacity(0.7))
                     }
                     .toggleStyle(.switch)
 
-                    Text("When off, Dayflow runs as a menu bar–only app.")
+                    Text("settings_dock_icon_subtitle")
                         .font(.custom("Nunito", size: 11.5))
                         .foregroundColor(.black.opacity(0.5))
 
-                    Text("Dayflow v\(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "")")
+                    Divider()
+                        .padding(.vertical, 4)
+
+                    // Language selector
+                    HStack {
+                        Text("settings_language")
+                            .font(.custom("Nunito", size: 13))
+                            .foregroundColor(.black.opacity(0.7))
+
+                        Spacer()
+
+                        Picker("", selection: $selectedLanguage) {
+                            Text("language_english").tag("en")
+                            Text("language_chinese").tag("zh-Hans")
+                        }
+                        .pickerStyle(.menu)
+                        .frame(width: 120)
+                        .onChange(of: selectedLanguage) { _, newLang in
+                            UserDefaults.standard.set([newLang], forKey: "AppleLanguages")
+                            UserDefaults.standard.synchronize()
+                            showLanguageRestartAlert = true
+                        }
+                    }
+
+                    Text(String(format: String(localized: "settings_version"), Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""))
                         .font(.custom("Nunito", size: 12))
                         .foregroundColor(.black.opacity(0.45))
                 }
             }
+        }
+        .alert("settings_language_restart_title", isPresented: $showLanguageRestartAlert) {
+            Button("settings_language_restart_now") {
+                NSApplication.shared.terminate(nil)
+            }
+            Button("settings_language_restart_later", role: .cancel) { }
+        } message: {
+            Text("settings_language_restart_msg")
         }
     }
 
@@ -1078,7 +1121,7 @@ struct SettingsView: View {
                     DatePicker("Start", selection: $exportStartDate, displayedComponents: .date)
                         .datePickerStyle(.compact)
                         .labelsHidden()
-                        .accessibilityLabel(Text("Export start date"))
+                        .accessibilityLabel(Text("export_start_date_label"))
 
                     Image(systemName: "arrow.right")
                         .foregroundColor(.black.opacity(0.35))
@@ -1086,10 +1129,10 @@ struct SettingsView: View {
                     DatePicker("End", selection: $exportEndDate, displayedComponents: .date)
                         .datePickerStyle(.compact)
                         .labelsHidden()
-                        .accessibilityLabel(Text("Export end date"))
+                        .accessibilityLabel(Text("export_end_date_label"))
                 }
 
-                Text("Includes titles, summaries, and details for each card.")
+                Text("export_includes_note")
                     .font(.custom("Nunito", size: 11.5))
                     .foregroundColor(.black.opacity(0.55))
 
@@ -1121,7 +1164,7 @@ struct SettingsView: View {
                     .disabled(isExportingTimelineRange || rangeInvalid)
 
                     if rangeInvalid {
-                        Text("Start date must be on or before end date.")
+                        Text("export_date_error")
                             .font(.custom("Nunito", size: 12))
                             .foregroundColor(Color(hex: "E91515"))
                     }
@@ -1876,7 +1919,7 @@ private struct CompactProviderRow: View {
             DayflowSurfaceButton(
                 action: onSwitch,
                 content: {
-                    Text("Switch")
+                    Text("provider_switch")
                         .font(.custom("Nunito", size: 13))
                         .fontWeight(.semibold)
                 },
@@ -1992,11 +2035,11 @@ private struct LocalModelUpgradeBanner: View {
                     .background(Color(red: 0.12, green: 0.09, blue: 0.02))
                     .clipShape(RoundedRectangle(cornerRadius: 8))
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("Upgrade to \(preset.displayName)")
+                    Text(String(format: String(localized: "upgrade_to_model"), preset.displayName))
                         .font(.custom("Nunito", size: 16))
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
-                    Text("Upgrade to Qwen3VL for a big improvement in quality.")
+                    Text("upgrade_qwen3_desc")
                         .font(.custom("Nunito", size: 13))
                         .foregroundColor(.white.opacity(0.8))
                 }
@@ -2021,7 +2064,7 @@ private struct LocalModelUpgradeBanner: View {
                 DayflowSurfaceButton(
                     action: onKeepLegacy,
                     content: {
-                        Text("Keep Qwen2.5").font(.custom("Nunito", size: 13)).fontWeight(.semibold)
+                        Text("upgrade_keep_qwen25").font(.custom("Nunito", size: 13)).fontWeight(.semibold)
                     },
                     background: Color.white.opacity(0.12),
                     foreground: .white,
@@ -2035,7 +2078,7 @@ private struct LocalModelUpgradeBanner: View {
                     action: onUpgrade,
                     content: {
                         HStack(spacing: 6) {
-                            Text("Upgrade now").font(.custom("Nunito", size: 13)).fontWeight(.semibold)
+                            Text("upgrade_now").font(.custom("Nunito", size: 13)).fontWeight(.semibold)
                             Image(systemName: "arrow.right")
                                 .font(.system(size: 13, weight: .semibold))
                         }
@@ -2103,10 +2146,10 @@ private struct LocalModelUpgradeSheet: View {
             VStack(alignment: .leading, spacing: 24) {
                 HStack {
                     VStack(alignment: .leading, spacing: 6) {
-                        Text("Upgrade to \(preset.displayName)")
+                        Text(String(format: String(localized: "upgrade_to_model"), preset.displayName))
                             .font(.custom("Nunito", size: 22))
                             .fontWeight(.semibold)
-                        Text("Follow the steps below, run a quick test, and Dayflow will switch you over automatically.")
+                        Text("upgrade_follow_steps")
                             .font(.custom("Nunito", size: 13))
                             .foregroundColor(.black.opacity(0.6))
                     }
@@ -2133,13 +2176,13 @@ private struct LocalModelUpgradeSheet: View {
                 }
 
                 VStack(alignment: .leading, spacing: 12) {
-                    Text("Which local runtime are you using?")
+                    Text("upgrade_runtime_question")
                         .font(.custom("Nunito", size: 14))
                         .foregroundColor(.black.opacity(0.65))
                     Picker("Engine", selection: $selectedEngine) {
-                        Text("Ollama").tag(LocalEngine.ollama)
-                        Text("LM Studio").tag(LocalEngine.lmstudio)
-                        Text("Custom").tag(LocalEngine.custom)
+                        Text("upgrade_runtime_ollama").tag(LocalEngine.ollama)
+                        Text("upgrade_runtime_lmstudio").tag(LocalEngine.lmstudio)
+                        Text("upgrade_runtime_custom").tag(LocalEngine.custom)
                     }
                     .pickerStyle(.segmented)
                     .frame(maxWidth: 420)
@@ -2164,7 +2207,7 @@ private struct LocalModelUpgradeSheet: View {
                     }
                 )
 
-                Text("Once the test succeeds, Dayflow updates your settings to \(preset.displayName) automatically.")
+                Text(String(format: String(localized: "upgrade_test_success"), preset.displayName))
                     .font(.custom("Nunito", size: 12))
                     .foregroundColor(.black.opacity(0.55))
 
@@ -2173,7 +2216,7 @@ private struct LocalModelUpgradeSheet: View {
                     DayflowSurfaceButton(
                         action: onCancel,
                         content: {
-                            Text("Close").font(.custom("Nunito", size: 13)).fontWeight(.semibold)
+                            Text("close").font(.custom("Nunito", size: 13)).fontWeight(.semibold)
                         },
                         background: Color.white,
                         foreground: .black,
@@ -2211,7 +2254,7 @@ private struct LocalModelUpgradeSheet: View {
             VStack(alignment: .leading, spacing: 6) {
                 ForEach(Array(instruction.bullets.enumerated()), id: \.offset) { index, bullet in
                     HStack(alignment: .firstTextBaseline, spacing: 8) {
-                        Text("\(index + 1).")
+                        Text(String(format: String(localized: "step_number"), "\(index + 1)"))
                             .font(.custom("Nunito", size: 13))
                             .foregroundColor(.black.opacity(0.55))
                             .frame(width: 18, alignment: .leading)
@@ -2279,7 +2322,7 @@ private struct GeminiModelSettingsCard: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Gemini model")
+            Text("provider_gemini_model")
                 .font(.custom("Nunito", size: 13))
                 .fontWeight(.semibold)
                 .foregroundColor(Color(red: 0.25, green: 0.17, blue: 0))
@@ -2297,7 +2340,7 @@ private struct GeminiModelSettingsCard: View {
                 .font(.custom("Nunito", size: 12))
                 .foregroundColor(.black.opacity(0.5))
 
-            Text("Dayflow automatically downgrades if your chosen model is rate limited or unavailable.")
+            Text("provider_gemini_downgrade")
                 .font(.custom("Nunito", size: 11))
                 .foregroundColor(.black.opacity(0.45))
         }

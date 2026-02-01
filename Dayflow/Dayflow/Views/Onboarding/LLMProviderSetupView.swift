@@ -146,11 +146,11 @@ struct LLMProviderSetupView: View {
     private var headerTitle: String {
         switch activeProviderType {
         case "ollama":
-            return "Use local AI"
+            return String(localized: "setup_header_local")
         case "chatgpt_claude":
-            return "Connect ChatGPT or Claude"
+            return String(localized: "setup_header_cli")
         default:
-            return "Gemini"
+            return String(localized: "setup_header_gemini")
         }
     }
     
@@ -177,7 +177,7 @@ struct LLMProviderSetupView: View {
                                 .foregroundColor(.black.opacity(0.7))
                                 .frame(width: 20, alignment: .center)
                             
-                            Text("Back")
+                            Text("back")
                                 .font(.custom("Nunito", size: 15))
                                 .fontWeight(.medium)
                                 .foregroundColor(.black.opacity(0.7))
@@ -245,10 +245,10 @@ struct LLMProviderSetupView: View {
     private var nextButtonText: String {
         if let title = setupState.currentStep.contentType.informationTitle {
             if (title == "Testing" || title == "Test Connection") && !setupState.testSuccessful {
-                return "Test Required"
+                return String(localized: "test_required")
             }
         }
-        return "Next"
+        return String(localized: "next")
     }
     
     @ViewBuilder
@@ -259,7 +259,7 @@ struct LLMProviderSetupView: View {
                 content: {
                     HStack(spacing: 8) {
                         Image(systemName: "checkmark.circle.fill").font(.system(size: 14))
-                        Text("Complete Setup").font(.custom("Nunito", size: 14)).fontWeight(.semibold)
+                        Text("complete_setup").font(.custom("Nunito", size: 14)).fontWeight(.semibold)
                     }
                 },
                 background: Color(red: 0.25, green: 0.17, blue: 0),
@@ -276,7 +276,7 @@ struct LLMProviderSetupView: View {
                 content: {
                     HStack(spacing: 6) {
                         Text(nextButtonText).font(.custom("Nunito", size: 14)).fontWeight(.semibold)
-                        if nextButtonText == "Next" {
+                        if nextButtonText == String(localized: "next") {
                             Image(systemName: "chevron.right").font(.system(size: 12, weight: .medium))
                         }
                     }
@@ -302,11 +302,11 @@ struct LLMProviderSetupView: View {
         case .localChoice:
             VStack(alignment: .leading, spacing: 20) {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Choose your local AI engine")
+                    Text("local_choose_engine_title")
                         .font(.custom("Nunito", size: 24))
                         .fontWeight(.semibold)
                         .foregroundColor(.black.opacity(0.9))
-                    Text("For local use, LM Studio is the most reliable; Ollama has a known thinking bug in onboarding (can't turn thinking off) and performance is unreliable.")
+                    Text("local_choose_engine_subtitle")
                         .font(.custom("Nunito", size: 14))
                         .foregroundColor(.black.opacity(0.6))
                 }
@@ -323,7 +323,7 @@ struct LLMProviderSetupView: View {
                                 }
                             }
                             .frame(width: 18, height: 18)
-                            Text("Download LM Studio")
+                            Text("local_download_lmstudio")
                                 .font(.custom("Nunito", size: 14))
                                 .fontWeight(.semibold)
                         },
@@ -334,29 +334,29 @@ struct LLMProviderSetupView: View {
                         showOverlayStroke: true
                     )
                 }
-                Text("Already have a local server? Make sure it’s OpenAI-compatible. You can set a custom base URL in the next step.")
+                Text("local_have_server_note")
                     .font(.custom("Nunito", size: 13))
                     .foregroundColor(.black.opacity(0.6))
                 HStack { Spacer(); nextButton }
             }
         case .localModelInstall:
             VStack(alignment: .leading, spacing: 16) {
-                Text("Install Qwen3-VL 4B")
+                Text("local_install_qwen_title")
                     .font(.custom("Nunito", size: 24))
                     .fontWeight(.semibold)
                     .foregroundColor(.black.opacity(0.9))
                 if setupState.localEngine == .ollama {
-                    Text("After installing Ollama, run this in your terminal to download the model (≈5GB):")
+                    Text("local_install_ollama_subtitle")
                         .font(.custom("Nunito", size: 14))
                         .foregroundColor(.black.opacity(0.6))
                     TerminalCommandView(
-                        title: "Run this command:",
-                        subtitle: "Downloads Qwen3 Vision 4B for Ollama",
+                        title: String(localized: "terminal_run_this"),
+                        subtitle: String(localized: "terminal_downloads_qwen"),
                         command: "ollama pull qwen3-vl:4b"
                     )
                 } else if setupState.localEngine == .lmstudio {
                     VStack(alignment: .leading, spacing: 16) {
-                        Text("After installing LM Studio, download the recommended model:")
+                        Text("local_install_lmstudio_subtitle")
                             .font(.custom("Nunito", size: 14))
                             .foregroundColor(.black.opacity(0.6))
 
@@ -365,7 +365,7 @@ struct LLMProviderSetupView: View {
                             content: {
                                 HStack(spacing: 8) {
                                     Image(systemName: "arrow.down.circle.fill").font(.system(size: 14))
-                                    Text("Download Qwen3-VL 4B in LM Studio").font(.custom("Nunito", size: 14)).fontWeight(.semibold)
+                                    Text("local_download_qwen_lmstudio").font(.custom("Nunito", size: 14)).fontWeight(.semibold)
                                 }
                             },
                             background: Color(red: 0.25, green: 0.17, blue: 0),
@@ -378,11 +378,11 @@ struct LLMProviderSetupView: View {
                         )
 
                         VStack(alignment: .leading, spacing: 6) {
-                            Text("This will open LM Studio and prompt you to download the model (≈3GB).")
+                            Text("local_lmstudio_open_prompt")
                                 .font(.custom("Nunito", size: 13))
                                 .foregroundColor(.black.opacity(0.65))
 
-                            Text("Once downloaded, turn on 'Local Server' in LM Studio (default http://localhost:1234)")
+                            Text("local_lmstudio_turn_on_server")
                                 .font(.custom("Nunito", size: 13))
                                 .foregroundColor(.black.opacity(0.65))
                         }
@@ -390,14 +390,14 @@ struct LLMProviderSetupView: View {
 
                         // Fallback manual instructions
                         VStack(alignment: .leading, spacing: 4) {
-                            Text("Manual setup:")
+                            Text("local_manual_setup")
                                 .font(.custom("Nunito", size: 12))
                                 .fontWeight(.semibold)
                                 .foregroundColor(.black.opacity(0.5))
-                            Text("1. Open LM Studio → Models tab")
+                            Text("local_manual_step1")
                                 .font(.custom("Nunito", size: 12))
                                 .foregroundColor(.black.opacity(0.45))
-                            Text("2. Search for 'Qwen3-VL-4B' and install the Instruct variant")
+                            Text("local_manual_step2")
                                 .font(.custom("Nunito", size: 12))
                                 .foregroundColor(.black.opacity(0.45))
                         }
@@ -405,11 +405,11 @@ struct LLMProviderSetupView: View {
                     }
                 } else {
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("Use any OpenAI-compatible VLM")
+                        Text("local_use_any_vlm_title")
                             .font(.custom("Nunito", size: 16))
                             .fontWeight(.semibold)
                             .foregroundColor(.black.opacity(0.85))
-                        Text("Make sure your server exposes the OpenAI Chat Completions API and has Qwen3-VL 4B (or Qwen2.5-VL 3B if you need the legacy model) installed.")
+                        Text("local_use_any_vlm_subtitle")
                             .font(.custom("Nunito", size: 14))
                             .foregroundColor(.black.opacity(0.75))
                     }
@@ -419,8 +419,8 @@ struct LLMProviderSetupView: View {
         case .terminalCommand(let command):
             VStack(alignment: .leading, spacing: 24) {
                 TerminalCommandView(
-                    title: "Terminal command:",
-                    subtitle: "Copy the code below and try running it in your terminal",
+                    title: String(localized: "terminal_command_title"),
+                    subtitle: String(localized: "terminal_copy_instruction"),
                     command: command
                 )
                 
@@ -434,8 +434,8 @@ struct LLMProviderSetupView: View {
             VStack(alignment: .leading, spacing: 24) {
                 APIKeyInputView(
                     apiKey: $setupState.apiKey,
-                    title: "Enter your API key:",
-                    subtitle: "Paste your Gemini API key below",
+                    title: String(localized: "gemini_enter_key_title"),
+                    subtitle: String(localized: "gemini_enter_key_subtitle"),
                     placeholder: "AIza...",
                     onValidate: { key in
                         // Basic validation for now
@@ -444,7 +444,7 @@ struct LLMProviderSetupView: View {
                 )
 
                 VStack(alignment: .leading, spacing: 12) {
-                    Text("Choose your Gemini model. If you're on the free tier, pick 3 Flash, it's the most powerful model and is completely free to use. If you're on a paid plan, which is not recommended, I recommend 2.5 Flash-Lite to minimize costs.")
+                    Text("gemini_model_choice")
                         .font(.custom("Nunito", size: 16))
                         .fontWeight(.semibold)
                         .foregroundColor(.black.opacity(0.85))
@@ -473,18 +473,18 @@ struct LLMProviderSetupView: View {
         case .modelDownload(let command):
             VStack(alignment: .leading, spacing: 24) {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Download the AI model")
+                    Text("model_download_title")
                         .font(.custom("Nunito", size: 24))
                         .fontWeight(.semibold)
                         .foregroundColor(.black.opacity(0.9))
-                    
-                    Text("This model enables Dayflow to understand what's on your screen")
+
+                    Text("model_download_subtitle")
                         .font(.custom("Nunito", size: 14))
                         .foregroundColor(.black.opacity(0.6))
                 }
-                
+
                 TerminalCommandView(
-                    title: "Run this command:",
+                    title: String(localized: "terminal_run_this"),
                     subtitle: "This will download the \(LocalModelPreset.qwen3VL4B.displayName) model (about 5GB)",
                     command: command
                 )
@@ -512,9 +512,9 @@ struct LLMProviderSetupView: View {
                         // Additional guidance for the local intro step only
                         if step.id == "intro" && providerType == "ollama" {
                             (
-                                Text("Advanced users can pick any ") +
-                                Text("vision-capable").fontWeight(.bold) +
-                                Text(" LLM, but we strongly recommend using Qwen3-VL 4B based on our internal benchmarks.")
+                                Text("local_advanced_users_prefix") +
+                                Text("local_vision_capable").fontWeight(.bold) +
+                                Text("local_advanced_users_suffix")
                             )
                             .font(.custom("Nunito", size: 14))
                             .foregroundColor(.black.opacity(0.6))
@@ -546,12 +546,12 @@ struct LLMProviderSetupView: View {
                             } else {
                                 // Engine selection: LM Studio or Custom
                                 VStack(alignment: .leading, spacing: 12) {
-                                    Text("Which tool are you using?")
+                                    Text("local_which_tool")
                                         .font(.custom("Nunito", size: 14))
                                         .foregroundColor(.black.opacity(0.65))
                                     Picker("Engine", selection: $setupState.localEngine) {
-                                        Text("LM Studio").tag(LocalEngine.lmstudio)
-                                        Text("Custom model").tag(LocalEngine.custom)
+                                        Text("local_lm_studio").tag(LocalEngine.lmstudio)
+                                        Text("local_custom_model").tag(LocalEngine.custom)
                                     }
                                     .pickerStyle(.segmented)
                                     .frame(maxWidth: 380)
@@ -605,28 +605,28 @@ struct LLMProviderSetupView: View {
         case .apiKeyInstructions:
             VStack(alignment: .leading, spacing: 24) {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Get your Gemini API key")
+                    Text("gemini_get_key_title")
                         .font(.custom("Nunito", size: 24))
                         .fontWeight(.semibold)
                         .foregroundColor(.black.opacity(0.9))
-                    
-                    Text("Google's Gemini offers a generous free tier that should allow you to run Dayflow ~15 hours a day for free - no credit card required")
+
+                    Text("gemini_free_tier_desc")
                         .font(.custom("Nunito", size: 14))
                         .foregroundColor(.black.opacity(0.6))
                 }
-                
+
                 VStack(alignment: .leading, spacing: 16) {
                     HStack(alignment: .top, spacing: 12) {
-                        Text("1.")
+                        Text("gemini_step_1")
                             .font(.custom("Nunito", size: 14))
                             .foregroundColor(.black.opacity(0.6))
                             .frame(width: 20, alignment: .leading)
-                        
+
                         Group {
-                            Text("Visit Google AI Studio ")
+                            Text("gemini_visit_studio")
                                 .font(.custom("Nunito", size: 14))
                                 .foregroundColor(.black.opacity(0.8))
-                            + Text("(aistudio.google.com)")
+                            + Text("gemini_studio_url")
                                 .font(.custom("Nunito", size: 14))
                                 .foregroundColor(Color(red: 1, green: 0.42, blue: 0.02))
                                 .underline()
@@ -634,31 +634,31 @@ struct LLMProviderSetupView: View {
                         .onTapGesture { openGoogleAIStudio() }
                         .pointingHandCursor()
                     }
-                    
+
                     HStack(alignment: .top, spacing: 12) {
-                        Text("2.")
+                        Text("gemini_step_2")
                             .font(.custom("Nunito", size: 14))
                             .foregroundColor(.black.opacity(0.6))
                             .frame(width: 20, alignment: .leading)
-                        
-                        Text("Click \"Get API key\" in the top right")
+
+                        Text("api_click_get_key")
                             .font(.custom("Nunito", size: 14))
                             .foregroundColor(.black.opacity(0.8))
                     }
-                    
+
                     HStack(alignment: .top, spacing: 12) {
-                        Text("3.")
+                        Text("gemini_step_3")
                             .font(.custom("Nunito", size: 14))
                             .foregroundColor(.black.opacity(0.6))
                             .frame(width: 20, alignment: .leading)
-                        
-                        Text("Create a new API key and copy it")
+
+                        Text("api_create_copy")
                             .font(.custom("Nunito", size: 14))
                             .foregroundColor(.black.opacity(0.8))
                     }
                 }
                 .padding(.vertical, 12)
-                
+
                 // Buttons row with Open Google AI Studio on left, Next on right
                 HStack {
                     DayflowSurfaceButton(
@@ -666,7 +666,7 @@ struct LLMProviderSetupView: View {
                         content: {
                             HStack(spacing: 8) {
                                 Image(systemName: "safari").font(.system(size: 14))
-                                Text("Open Google AI Studio").font(.custom("Nunito", size: 14)).fontWeight(.semibold)
+                                Text("api_open_google_studio").font(.custom("Nunito", size: 14)).fontWeight(.semibold)
                             }
                         },
                         background: Color(red: 0.25, green: 0.17, blue: 0),
@@ -865,47 +865,47 @@ class ProviderSetupState: ObservableObject {
             steps = [
                 SetupStep(
                     id: "intro",
-                    title: "Before you begin",
+                    title: String(localized: "step_before_begin"),
                     contentType: .information(
-                        "For experienced users",
-                        "This path is recommended only if you're comfortable running LLMs locally and debugging technical issues. If terms like vLLM or API endpoint don't ring a bell, we recommend going back and picking ChatGPT, Claude, or Gemini. It's non-technical and takes about 30 seconds.\n\nFor local mode, Dayflow recommends Qwen3-VL 4B as the core vision-language model (Qwen2.5-VL 3B remains available if you need a smaller download)."
+                        String(localized: "info_for_experienced"),
+                        String(localized: "setup_advanced_warning")
                     )
                 ),
-                SetupStep(id: "choose", title: "Choose engine", contentType: .localChoice),
-                SetupStep(id: "model", title: "Install model", contentType: .localModelInstall),
-                SetupStep(id: "test", title: "Test connection", contentType: .information("Test Connection", "Click the button below to verify your local server responds to a simple chat completion.")),
-                SetupStep(id: "complete", title: "Complete", contentType: .information("All set!", "Local AI is configured and ready to use with Dayflow."))
+                SetupStep(id: "choose", title: String(localized: "step_choose_engine"), contentType: .localChoice),
+                SetupStep(id: "model", title: String(localized: "step_install_model"), contentType: .localModelInstall),
+                SetupStep(id: "test", title: String(localized: "step_test_connection"), contentType: .information(String(localized: "info_test_connection"), String(localized: "local_test_instruction"))),
+                SetupStep(id: "complete", title: String(localized: "step_complete"), contentType: .information(String(localized: "info_all_set"), String(localized: "local_complete_message")))
             ]
         case "chatgpt_claude":
             preferredCLITool = ProviderSetupState.loadStoredPreferredCLITool()
             steps = [
                 SetupStep(
                     id: "intro",
-                    title: "Before you begin",
+                    title: String(localized: "step_before_begin"),
                     contentType: .information(
-                        "Install Codex CLI (ChatGPT) or Claude Code",
-                        "If you have a paid ChatGPT/Claude account, you can have Dayflow tap into your existing usage limits. Everything flows through your current account - no extra charges - and you can opt out of training for privacy. You only need one CLI installed and signed in on this Mac; we'll verify it automatically next."
+                        String(localized: "info_install_cli"),
+                        String(localized: "cli_intro_message")
                     )
                 ),
                 SetupStep(
                     id: "detect",
-                    title: "Check installations",
+                    title: String(localized: "step_check_installations"),
                     contentType: .cliDetection
                 ),
                 SetupStep(
                     id: "test",
-                    title: "Test connection",
+                    title: String(localized: "step_test_connection"),
                     contentType: .information(
-                        "Test Connection",
-                        "Run a quick test to verify your CLI is working and signed in."
+                        String(localized: "info_test_connection"),
+                        String(localized: "cli_test_instruction")
                     )
                 ),
                 SetupStep(
                     id: "complete",
-                    title: "Complete",
+                    title: String(localized: "step_complete"),
                     contentType: .information(
-                        "All set!",
-                        "ChatGPT and Claude tooling is ready. You can fine-tune which assistant to use anytime from Settings → AI Provider."
+                        String(localized: "info_all_set"),
+                        String(localized: "cli_complete_message")
                     )
                 )
             ]
@@ -922,14 +922,14 @@ class ProviderSetupState: ObservableObject {
             cliPrompt = "Say hello"
         default: // gemini
             steps = [
-                SetupStep(id: "getkey", title: "Get API key",
+                SetupStep(id: "getkey", title: String(localized: "step_get_api_key"),
                           contentType: .apiKeyInstructions),
-                SetupStep(id: "enterkey", title: "Enter API key",
+                SetupStep(id: "enterkey", title: String(localized: "step_enter_api_key"),
                           contentType: .apiKeyInput),
-                SetupStep(id: "verify", title: "Test connection",
-                          contentType: .information("Test Connection", "Click the button below to verify your API key works with Gemini")),
-                SetupStep(id: "complete", title: "Complete",
-                          contentType: .information("All set!", "Gemini is now configured and ready to use with Dayflow."))
+                SetupStep(id: "verify", title: String(localized: "step_test_connection"),
+                          contentType: .information(String(localized: "info_test_connection"), String(localized: "gemini_test_instruction"))),
+                SetupStep(id: "complete", title: String(localized: "step_complete"),
+                          contentType: .information(String(localized: "info_all_set"), String(localized: "gemini_complete_message")))
             ]
         }
     }
@@ -1376,15 +1376,15 @@ struct LocalLLMTestView: View {
         VStack(alignment: .leading, spacing: 12) {
             if showInputs {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Base URL")
+                    Text("local_base_url")
                         .font(.custom("Nunito", size: 13))
                         .foregroundColor(.black.opacity(0.6))
                     TextField(basePlaceholder ?? engine.defaultBaseURL, text: $baseURL)
                         .textFieldStyle(.roundedBorder)
                 }
-                
+
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Model ID")
+                    Text("local_model_id")
                         .font(.custom("Nunito", size: 13))
                         .foregroundColor(.black.opacity(0.6))
                     TextField(modelPlaceholder ?? LocalModelPreferences.defaultModelId(for: engine), text: $modelId)
@@ -1393,13 +1393,13 @@ struct LocalLLMTestView: View {
 
                 if engine == .custom {
                     VStack(alignment: .leading, spacing: 6) {
-                        Text("API key (optional)")
+                        Text("local_api_key_optional")
                             .font(.custom("Nunito", size: 13))
                             .foregroundColor(.black.opacity(0.6))
                         SecureField("sk-live-...", text: $apiKey)
                             .textFieldStyle(.roundedBorder)
                             .disableAutocorrection(true)
-                        Text("Stored locally in UserDefaults and sent as a Bearer token for custom endpoints (LiteLLM, OpenRouter, etc.)")
+                        Text("local_api_key_help")
                             .font(.custom("Nunito", size: 11))
                             .foregroundColor(.black.opacity(0.5))
                     }
@@ -1415,8 +1415,8 @@ struct LocalLLMTestView: View {
                         } else {
                             Image(systemName: success ? "checkmark.circle.fill" : "bolt.fill").font(.system(size: 14))
                         }
-                        let idleLabel = success ? "Test Successful!" : buttonLabel
-                        Text(isTesting ? "Testing..." : idleLabel)
+                        let idleLabel = success ? String(localized: "test_successful") : buttonLabel
+                        Text(isTesting ? String(localized: "testing") : idleLabel)
                             .font(.custom("Nunito", size: 14))
                             .fontWeight(.semibold)
                     }
@@ -1437,7 +1437,7 @@ struct LocalLLMTestView: View {
                     .foregroundColor(success ? .black.opacity(0.7) : Color(hex: "E91515"))
                     .padding(.vertical, 6)
                 if !success {
-                    Text("If you get stuck here, you can go back and choose the ‘Bring your own key’ option — it only takes a minute to set up.")
+                    Text("local_test_error_help")
                         .font(.custom("Nunito", size: 12))
                         .foregroundColor(.black.opacity(0.55))
                         .padding(.top, 2)
@@ -1565,7 +1565,7 @@ struct ChatCLITestView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("We'll ask your CLI a simple question to verify it's working and signed in.")
+            Text("cli_test_question")
                 .font(.custom("Nunito", size: 13))
                 .foregroundColor(.black.opacity(0.6))
                 .fixedSize(horizontal: false, vertical: true)
@@ -1579,8 +1579,8 @@ struct ChatCLITestView: View {
                         } else {
                             Image(systemName: success ? "checkmark.circle.fill" : "bolt.fill").font(.system(size: 14))
                         }
-                        let idleLabel = success ? "Test Successful!" : "Test CLI"
-                        Text(isTesting ? "Testing..." : idleLabel)
+                        let idleLabel = success ? String(localized: "test_successful") : String(localized: "test_cli")
+                        Text(isTesting ? String(localized: "testing") : idleLabel)
                             .font(.custom("Nunito", size: 14))
                             .fontWeight(.semibold)
                     }
@@ -1597,7 +1597,7 @@ struct ChatCLITestView: View {
             .opacity(selectedTool == nil ? 0.5 : 1.0)
 
             if selectedTool == nil {
-                Text("Select ChatGPT or Claude above before running the test.")
+                Text("cli_select_first")
                     .font(.custom("Nunito", size: 12))
                     .foregroundColor(.black.opacity(0.6))
             }
@@ -1610,7 +1610,7 @@ struct ChatCLITestView: View {
 
                     if debugOutput != nil {
                         Button(action: copyDebugLogs) {
-                            Text("Copy logs")
+                            Text("copy_logs")
                                 .font(.custom("Nunito", size: 11))
                                 .foregroundColor(.black.opacity(0.4))
                                 .underline()
@@ -1624,7 +1624,7 @@ struct ChatCLITestView: View {
             // Debug output - shows raw CLI response for troubleshooting (only on failure)
             if let debug = debugOutput, !success {
                 VStack(alignment: .leading, spacing: 6) {
-                    Text("Debug output:")
+                    Text("cli_debug_output")
                         .font(.custom("Nunito", size: 11))
                         .fontWeight(.semibold)
                         .foregroundColor(.black.opacity(0.5))
@@ -2000,10 +2000,10 @@ struct ChatCLIDetectionStepView<NextButton: View>: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 24) {
-            Text("Dayflow can talk to ChatGPT (via the Codex CLI) or Claude Code. You only need one installed and signed in on this Mac. After installing, run `codex auth` or `claude login` in Terminal to connect it to your account.")
+            Text("cli_detailed_instruction")
                 .font(.custom("Nunito", size: 14))
                 .foregroundColor(.black.opacity(0.6))
-            
+
             HStack(alignment: .top, spacing: 14) {
                 ChatCLIToolStatusRow(
                     tool: .codex,
@@ -2016,13 +2016,13 @@ struct ChatCLIDetectionStepView<NextButton: View>: View {
                     onInstall: { onInstall(.claude) }
                 )
             }
-            
-            Text("Tip: Once both are installed, you can choose which provider Dayflow uses from Settings → AI Provider.")
+
+            Text("cli_tip_switch")
                 .font(.custom("Nunito", size: 12))
                 .foregroundColor(.black.opacity(0.5))
 
             VStack(alignment: .leading, spacing: 10) {
-                Text("Choose which provider Dayflow should use")
+                Text("cli_choose_provider")
                     .font(.custom("Nunito", size: 13))
                     .fontWeight(.semibold)
                     .foregroundColor(.black.opacity(0.65))
@@ -2300,11 +2300,11 @@ struct DebugCommandConsole: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Run a command as Dayflow")
+            Text("cli_run_command")
                 .font(.custom("Nunito", size: 13))
                 .fontWeight(.semibold)
                 .foregroundColor(.black.opacity(0.7))
-            Text("Helpful for checking PATH differences. We run using the same environment as the detection step.")
+            Text("cli_path_help")
                 .font(.custom("Nunito", size: 12))
                 .foregroundColor(.black.opacity(0.55))
             HStack(spacing: 10) {

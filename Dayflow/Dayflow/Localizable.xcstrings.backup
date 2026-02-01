@@ -1,0 +1,4834 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "onboarding.welcome.tagline": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your day has a story. Uncover it with Dayflow."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你的一天自有故事，让 Dayflow 为你发现。"
+          }
+        }
+      }
+    },
+    "common.start": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "开始"
+          }
+        }
+      }
+    },
+    "onboarding.completion.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You are ready to go!"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "一切就绪！"
+          }
+        }
+      }
+    },
+    "onboarding.completion.message": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welcome to Dayflow! Let it run for about 30 minutes to gather enough data, then come back to explore your personalized timeline. If you have any issues, feature requests, or feedback please use the feedback tab. I would love to hear from you! "
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "欢迎来到 Dayflow！让它运行约 30 分钟以收集足够的数据，然后回来探索你的个性化时间轴。如有问题、功能需求或反馈，请使用反馈标签页。我非常期待听到你的声音！"
+          }
+        }
+      }
+    },
+    "onboarding.completion.referral_prompt": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I have a small favor to ask. I'd love to understand where you first heard about Dayflow."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "我有个小小的请求。我想了解你最初是在哪里听说 Dayflow 的。"
+          }
+        }
+      }
+    },
+    "menu.pause_dayflow": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pause Dayflow"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "暂停 Dayflow"
+          }
+        }
+      }
+    },
+    "menu.resume_dayflow": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resume Dayflow"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "恢复 Dayflow"
+          }
+        }
+      }
+    },
+    "menu.open_dayflow": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Dayflow"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "打开 Dayflow"
+          }
+        }
+      }
+    },
+    "menu.open_recordings": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Recordings"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "打开录制文件夹"
+          }
+        }
+      }
+    },
+    "menu.check_for_updates": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check for Updates"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "检查更新"
+          }
+        }
+      }
+    },
+    "menu.quit_completely": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quit Completely"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完全退出"
+          }
+        }
+      }
+    },
+    "menu.paused_for": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dayflow paused for "
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dayflow 已暂停 "
+          }
+        }
+      }
+    },
+    "menu.duration.15min": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "15 Min"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "15 分钟"
+          }
+        }
+      }
+    },
+    "menu.duration.30min": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "30 Min"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "30 分钟"
+          }
+        }
+      }
+    },
+    "menu.duration.1hour": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 Hour"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 小时"
+          }
+        }
+      }
+    },
+    "menu.duration.indefinite": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "∞"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "∞"
+          }
+        }
+      }
+    },
+    "aistudiogooglecom": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "(aistudio.google.com)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "(aistudio.google.com)"
+          }
+        }
+      }
+    },
+    "unnamed": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ":"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": ":"
+          }
+        }
+      }
+    },
+    "1": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "1."
+          }
+        }
+      }
+    },
+    "1_open_lm_studio_models_tab": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1. Open LM Studio → Models tab"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "1. Open LM Studio → Models tab"
+          }
+        }
+      }
+    },
+    "2": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "2."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "2."
+          }
+        }
+      }
+    },
+    "2_search_for_qwen3vl4b_and": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "2. Search for 'Qwen3-VL-4B' and install the Instruct variant"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "2. Search for 'Qwen3-VL-4B' and install the Instruct variant"
+          }
+        }
+      }
+    },
+    "3": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "3."
+          }
+        }
+      }
+    },
+    "aipowered_insights": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AI-Powered Insights"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "AI-Powered Insights"
+          }
+        }
+      }
+    },
+    "aiza": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AIza..."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "AIza..."
+          }
+        }
+      }
+    },
+    "api_key_optional": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "API key (optional)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "API key (optional)"
+          }
+        }
+      }
+    },
+    "api_key_should_start_with": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "API key should start with 'AIza' and be at least 30 characters"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "API 密钥应以 'AIza' 开头且至少 30 个字符"
+          }
+        }
+      }
+    },
+    "access_granted": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Access granted!"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Access granted!"
+          }
+        }
+      }
+    },
+    "active_provider_and_runtime_details": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Active provider and runtime details"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Active provider and runtime details"
+          }
+        }
+      }
+    },
+    "add_a_category_to_get_started": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add a category to get started."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "添加一个分类以开始。"
+          }
+        }
+      }
+    },
+    "adjust_storage_limit": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adjust storage limit"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Adjust storage limit"
+          }
+        }
+      }
+    },
+    "adjust_the_prompts_used_for": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adjust the prompts used for local timeline summaries"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Adjust the prompts used for local timeline summaries"
+          }
+        }
+      }
+    },
+    "advanced_users_can_pick_any": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Advanced users can pick any"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Advanced users can pick any"
+          }
+        }
+      }
+    },
+    "after_installing_lm_studio_download": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "After installing LM Studio, download the recommended model:"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "After installing LM Studio, download the recommended model:"
+          }
+        }
+      }
+    },
+    "after_installing_ollama_run_this": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "After installing Ollama, run this in your terminal to download the model (≈5GB):"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "After installing Ollama, run this in your terminal to download the model (≈5GB):"
+          }
+        }
+      }
+    },
+    "all_caught_up": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All caught up!"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "全部完成！"
+          }
+        }
+      }
+    },
+    "already_have_a_local_server": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Already have a local server? Make sure it’s OpenAI-compatible. You can set a custom base URL in the next step."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Already have a local server? Make sure it’s OpenAI-compatible. You can set a custom base URL in the next step."
+          }
+        }
+      }
+    },
+    "app_preferences": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App preferences"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "App preferences"
+          }
+        }
+      }
+    },
+    "ask_and_track_answers_to": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ask and track answers to any question about your day, such as ‘How many times did I check Twitter today?’, ‘How long did I spend in Figma?’, or ‘What was my longest deep-work block?’"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Ask and track answers to any question about your day, such as ‘How many times did I check Twitter today?’, ‘How long did I spend in Figma?’, or ‘What was my longest deep-work block?’"
+          }
+        }
+      }
+    },
+    "back": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Back"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "返回"
+          }
+        }
+      }
+    },
+    "base_url": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Base URL"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Base URL"
+          }
+        }
+      }
+    },
+    "before_you_begin": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Before you begin"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Before you begin"
+          }
+        }
+      }
+    },
+    "brainstorming_with_chat_gpt": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brainstorming with Chat GPT"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Brainstorming with Chat GPT"
+          }
+        }
+      }
+    },
+    "break": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Break"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Break"
+          }
+        }
+      }
+    },
+    "bring_your_own_keys_is_the_easiest_setup_30s": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bring your own keys is the easiest setup (30s)."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "自带密钥是最简单的设置（30 秒）。"
+          }
+        }
+      }
+    },
+    "browsing_tripadvisor": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Browsing TripAdvisor"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Browsing TripAdvisor"
+          }
+        }
+      }
+    },
+    "calendar": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Calendar"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Calendar"
+          }
+        }
+      }
+    },
+    "cancel": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "取消"
+          }
+        }
+      }
+    },
+    "cards_are_generated_about_every": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cards are generated about every 15 minutes. If Dayflow is on and no cards show up within 30 minutes, please report a bug."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Cards are generated about every 15 minutes. If Dayflow is on and no cards show up within 30 minutes, please report a bug."
+          }
+        }
+      }
+    },
+    "change_category": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Change category"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "更改分类"
+          }
+        }
+      }
+    },
+    "chatgpt_claude_prompt_customization": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ChatGPT / Claude prompt customization"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "ChatGPT / Claude prompt customization"
+          }
+        }
+      }
+    },
+    "chatgpt_or_claude": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ChatGPT or Claude"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ChatGPT 或 Claude"
+          }
+        }
+      }
+    },
+    "check_installations": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check installations"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Check installations"
+          }
+        }
+      }
+    },
+    "choose_a_way_to_run_dayflow": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose a way to run Dayflow"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "选择运行 Dayflow 的方式"
+          }
+        }
+      }
+    },
+    "choose_engine": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose engine"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Choose engine"
+          }
+        }
+      }
+    },
+    "choose_which_gemini_model_dayflow": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose which Gemini model Dayflow should prioritize"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Choose which Gemini model Dayflow should prioritize"
+          }
+        }
+      }
+    },
+    "choose_which_provider_dayflow_should_use": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose which provider Dayflow should use"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Choose which provider Dayflow should use"
+          }
+        }
+      }
+    },
+    "choose_your_gemini_model_if": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose your Gemini model. If you're on the free tier, pick 3 Flash, it's the most powerful model and is completely free to use. If you're on a paid plan, which is not recommended, I recommend 2.5 Flash-Lite to minimize costs."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Choose your Gemini model. If you're on the free tier, pick 3 Flash, it's the most powerful model and is completely free to use. If you're on a paid plan, which is not recommended, I recommend 2.5 Flash-Lite to minimize costs."
+          }
+        }
+      }
+    },
+    "choose_your_local_ai_engine": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose your local AI engine"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Choose your local AI engine"
+          }
+        }
+      }
+    },
+    "close": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Close"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "关闭"
+          }
+        }
+      }
+    },
+    "coding_session": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coding session"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Coding session"
+          }
+        }
+      }
+    },
+    "come_back_after_a_few_timeline_cards_appear": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Come back after a few timeline cards appear."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Come back after a few timeline cards appear."
+          }
+        }
+      }
+    },
+    "comparing_flights": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comparing flights"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Comparing flights"
+          }
+        }
+      }
+    },
+    "complete": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Complete"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完成"
+          }
+        }
+      }
+    },
+    "complete_setup": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Complete Setup"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Complete Setup"
+          }
+        }
+      }
+    },
+    "configure_whatsnewconfigurationconfiguredrelease_to_preview": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Configure WhatsNewConfiguration.configuredRelease to preview."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Configure WhatsNewConfiguration.configuredRelease to preview."
+          }
+        }
+      }
+    },
+    "confirm": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Confirm"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "确认"
+          }
+        }
+      }
+    },
+    "connection_health": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connection health"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Connection health"
+          }
+        }
+      }
+    },
+    "continue": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continue"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "继续"
+          }
+        }
+      }
+    },
+    "copied": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copied"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已复制"
+          }
+        }
+      }
+    },
+    "copy_logs": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copy logs"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Copy logs"
+          }
+        }
+      }
+    },
+    "copy_the_code_below_and": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copy the code below and try running it in your terminal"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Copy the code below and try running it in your terminal"
+          }
+        }
+      }
+    },
+    "copy_timeline": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copy timeline"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "复制时间轴"
+          }
+        }
+      }
+    },
+    "copy_timeline_to_clipboard": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copy timeline to clipboard"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "复制时间轴到剪贴板"
+          }
+        }
+      }
+    },
+    "count_count": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Count: \\(count)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Count: \\(count)"
+          }
+        }
+      }
+    },
+    "create_a_new_api_key_and_copy_it": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create a new API key and copy it"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Create a new API key and copy it"
+          }
+        }
+      }
+    },
+    "create_a_new_category": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create a new category"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "创建新分类"
+          }
+        }
+      }
+    },
+    "current_configuration": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Current configuration"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Current configuration"
+          }
+        }
+      }
+    },
+    "custom": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Custom"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Custom"
+          }
+        }
+      }
+    },
+    "custom_model": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Custom model"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Custom model"
+          }
+        }
+      }
+    },
+    "customize_the_local_model_prompts": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Customize the local model prompts for summary and title generation."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Customize the local model prompts for summary and title generation."
+          }
+        }
+      }
+    },
+    "customize_your_categories": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Customize your categories"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "自定义你的分类"
+          }
+        }
+      }
+    },
+    "detailed_summary": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DETAILED SUMMARY"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "DETAILED SUMMARY"
+          }
+        }
+      }
+    },
+    "dashboard": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dashboard"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "仪表板"
+          }
+        }
+      }
+    },
+    "dayflow_journal": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dayflow Journal"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dayflow 日记"
+          }
+        }
+      }
+    },
+    "dayflow_pro": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dayflow Pro"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Dayflow Pro"
+          }
+        }
+      }
+    },
+    "dayflow_pro_diagnostics_coming_soon": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dayflow Pro diagnostics coming soon"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Dayflow Pro diagnostics coming soon"
+          }
+        }
+      }
+    },
+    "dayflow_automatically_downgrades_if_your": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dayflow automatically downgrades if your chosen model is rate limited or unavailable."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Dayflow automatically downgrades if your chosen model is rate limited or unavailable."
+          }
+        }
+      }
+    },
+    "dayflow_can_talk_to_chatgpt": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dayflow can talk to ChatGPT (via the Codex CLI) or Claude Code. You only need one installed and signed in on this Mac. After installing, run `codex auth` or `claude login` in Terminal to connect it to your account."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Dayflow can talk to ChatGPT (via the Codex CLI) or Claude Code. You only need one installed and signed in on this Mac. After installing, run `codex auth` or `claude login` in Terminal to connect it to your account."
+          }
+        }
+      }
+    },
+    "dayflow_helps_you_track_your": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dayflow helps you track your daily and longer term pursuits, gives you the space to reflect, and generates a summary of each day."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Dayflow helps you track your daily and longer term pursuits, gives you the space to reflect, and generates a summary of each day."
+          }
+        }
+      }
+    },
+    "dayflow_paused_for": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dayflow paused for"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dayflow 已暂停"
+          }
+        }
+      }
+    },
+    "dayflow_recording_is_currently_turned": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dayflow recording is currently turned off, so cards aren’t being produced."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Dayflow recording is currently turned off, so cards aren’t being produced."
+          }
+        }
+      }
+    },
+    "dayflow_summary": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dayflow summary"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Dayflow summary"
+          }
+        }
+      }
+    },
+    "debug": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Debug"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Debug"
+          }
+        }
+      }
+    },
+    "debug_output": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Debug output:"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Debug output:"
+          }
+        }
+      }
+    },
+    "disk_usage": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Disk usage"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Disk usage"
+          }
+        }
+      }
+    },
+    "distractions_so_far": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Distractions so far"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "到目前为止的分心"
+          }
+        }
+      }
+    },
+    "download_lm_studio": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download LM Studio"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Download LM Studio"
+          }
+        }
+      }
+    },
+    "download_qwen3vl_4b_in_lm_studio": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download Qwen3-VL 4B in LM Studio"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Download Qwen3-VL 4B in LM Studio"
+          }
+        }
+      }
+    },
+    "download_a_markdown_export_for_any_date_range": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download a Markdown export for any date range"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下载任意日期范围的 Markdown 导出"
+          }
+        }
+      }
+    },
+    "download_the_ai_model": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download the AI model"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Download the AI model"
+          }
+        }
+      }
+    },
+    "downloads_qwen3_vision_4b_for_ollama": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Downloads Qwen3 Vision 4B for Ollama"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Downloads Qwen3 Vision 4B for Ollama"
+          }
+        }
+      }
+    },
+    "drag_to_category": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drag to category"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "拖动到分类"
+          }
+        }
+      }
+    },
+    "early_access": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "EARLY ACCESS"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "EARLY ACCESS"
+          }
+        }
+      }
+    },
+    "edit_categories_to_calculate_distractions": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Edit categories to calculate distractions."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Edit categories to calculate distractions."
+          }
+        }
+      }
+    },
+    "edit_categories_to_calculate_focus": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Edit categories to calculate focus."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Edit categories to calculate focus."
+          }
+        }
+      }
+    },
+    "edit_colors": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Edit colors"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "编辑颜色"
+          }
+        }
+      }
+    },
+    "edit_configuration": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Edit configuration"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Edit configuration"
+          }
+        }
+      }
+    },
+    "edit_title_and_description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Edit title and description"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Edit title and description"
+          }
+        }
+      }
+    },
+    "email_jerry": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Email Jerry"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Email Jerry"
+          }
+        }
+      }
+    },
+    "email_responses": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Email responses"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Email responses"
+          }
+        }
+      }
+    },
+    "email_works_great_if_you": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Email works great if you want to drop a quick note, Discord if you want to join the community, and if you’d prefer to chat, find some time on my calendar - I’d love to dig into why Dayflow is or isn’t working well for you."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Email works great if you want to drop a quick note, Discord if you want to join the community, and if you’d prefer to chat, find some time on my calendar - I’d love to dig into why Dayflow is or isn’t working well for you."
+          }
+        }
+      }
+    },
+    "ensure_dayflow_can_capture_your_screen": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ensure Dayflow can capture your screen"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Ensure Dayflow can capture your screen"
+          }
+        }
+      }
+    },
+    "enter_api_key": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enter API key"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Enter API key"
+          }
+        }
+      }
+    },
+    "enter_access_code": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enter access code"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "输入访问代码"
+          }
+        }
+      }
+    },
+    "enter_your_api_key": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enter your API key:"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "输入你的 API 密钥："
+          }
+        }
+      }
+    },
+    "export_end_date": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Export end date"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "导出结束日期"
+          }
+        }
+      }
+    },
+    "export_start_date": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Export start date"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "导出开始日期"
+          }
+        }
+      }
+    },
+    "export_timeline": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Export timeline"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "导出时间轴"
+          }
+        }
+      }
+    },
+    "follow_the_steps_below_run": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Follow the steps below, run a quick test, and Dayflow will switch you over automatically."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Follow the steps below, run a quick test, and Dayflow will switch you over automatically."
+          }
+        }
+      }
+    },
+    "for_local_use_lm_studio": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "For local use, LM Studio is the most reliable; Ollama has a known thinking bug in onboarding (can't turn thinking off) and performance is unreliable."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "For local use, LM Studio is the most reliable; Ollama has a known thinking bug in onboarding (can't turn thinking off) and performance is unreliable."
+          }
+        }
+      }
+    },
+    "gemini": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gemini"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gemini"
+          }
+        }
+      }
+    },
+    "gemini_model": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gemini model"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Gemini model"
+          }
+        }
+      }
+    },
+    "gemini_model_preference": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gemini model preference"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Gemini model preference"
+          }
+        }
+      }
+    },
+    "gemini_prompt_customization": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gemini prompt customization"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Gemini prompt customization"
+          }
+        }
+      }
+    },
+    "general_toggles_and_telemetry_settings": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "General toggles and telemetry settings"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "General toggles and telemetry settings"
+          }
+        }
+      }
+    },
+    "generating_summary": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Generating summary..."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Generating summary..."
+          }
+        }
+      }
+    },
+    "get_api_key": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Get API key"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Get API key"
+          }
+        }
+      }
+    },
+    "get_early_access": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Get early access"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "获取早期访问权限"
+          }
+        }
+      }
+    },
+    "get_your_gemini_api_key": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Get your Gemini API key"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Get your Gemini API key"
+          }
+        }
+      }
+    },
+    "googles_gemini_offers_a_generous": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Google's Gemini offers a generous free tier that should allow you to run Dayflow ~15 hours a day for free - no credit card required"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Google's Gemini offers a generous free tier that should allow you to run Dayflow ~15 hours a day for free - no credit card required"
+          }
+        }
+      }
+    },
+    "grant_permission": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grant Permission"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "授予权限"
+          }
+        }
+      }
+    },
+    "happy_holidays_big_updates_gemini_flash_3": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Happy Holidays! Big updates + Gemini Flash 3"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Happy Holidays! Big updates + Gemini Flash 3"
+          }
+        }
+      }
+    },
+    "helpful_for_checking_path_differences": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Helpful for checking PATH differences. We run using the same environment as the detection step."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Helpful for checking PATH differences. We run using the same environment as the detection step."
+          }
+        }
+      }
+    },
+    "how_was_your_day_what_did_you_do_how_do_you_feel": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How was your day? What did you do? How do you feel?"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你今天过得怎么样？你做了什么？你感觉如何？"
+          }
+        }
+      }
+    },
+    "if_you_find_that_your": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If you find that your activities are summarized inaccurately, try editing the descriptions of your categories to improve Dayflow’s accuracy."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "If you find that your activities are summarized inaccurately, try editing the descriptions of your categories to improve Dayflow’s accuracy."
+          }
+        }
+      }
+    },
+    "if_you_get_stuck_here": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If you get stuck here, you can go back and choose the ‘Bring your own key’ option — it only takes a minute to set up."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "If you get stuck here, you can go back and choose the ‘Bring your own key’ option — it only takes a minute to set up."
+          }
+        }
+      }
+    },
+    "includes_titles_summaries_and_details": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Includes titles, summaries, and details for each card."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "包括每张卡片的标题、摘要和详情。"
+          }
+        }
+      }
+    },
+    "install_qwen3vl_4b": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Install Qwen3-VL 4B"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Install Qwen3-VL 4B"
+          }
+        }
+      }
+    },
+    "install_and_forget": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Install and Forget"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "安装即忘"
+          }
+        }
+      }
+    },
+    "install_model": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Install model"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Install model"
+          }
+        }
+      }
+    },
+    "id_like_to_share_this": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I’d like to share this log to the developer to help improve the product."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "I’d like to share this log to the developer to help improve the product."
+          }
+        }
+      }
+    },
+    "join_discord": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Join Discord"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Join Discord"
+          }
+        }
+      }
+    },
+    "keep_qwen25": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep Qwen2.5"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Keep Qwen2.5"
+          }
+        }
+      }
+    },
+    "keeps_the_menu_bar_controller": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keeps the menu bar controller running right after you sign in so capture can resume instantly."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "登录后立即保持菜单栏控制器运行，以便立即恢复捕获。"
+          }
+        }
+      }
+    },
+    "llm_but_we_strongly_recommend": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "LLM, but we strongly recommend using Qwen3-VL 4B based on our internal benchmarks."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "LLM, but we strongly recommend using Qwen3-VL 4B based on our internal benchmarks."
+          }
+        }
+      }
+    },
+    "lm_studio": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "LM Studio"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "LM Studio"
+          }
+        }
+      }
+    },
+    "last_checked_relativedatelast": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Last checked \\(relativeDate(last))"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Last checked \\(relativeDate(last))"
+          }
+        }
+      }
+    },
+    "last_step": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Last step!"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最后一步！"
+          }
+        }
+      }
+    },
+    "launch_dayflow_at_login": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Launch Dayflow at login"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "登录时启动 Dayflow"
+          }
+        }
+      }
+    },
+    "local_prompt_customization": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Local prompt customization"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Local prompt customization"
+          }
+        }
+      }
+    },
+    "long_term_goals": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Long term goals"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Long term goals"
+          }
+        }
+      }
+    },
+    "longest_focus_duration": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Longest focus duration"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最长专注时长"
+          }
+        }
+      }
+    },
+    "lower_categoryname_limit": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lower \\(categoryName) limit?"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Lower \\(categoryName) limit?"
+          }
+        }
+      }
+    },
+    "make_sure_your_server_exposes": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Make sure your server exposes the OpenAI Chat Completions API and has Qwen3-VL 4B (or Qwen2.5-VL 3B if you need the legacy model) installed."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Make sure your server exposes the OpenAI Chat Completions API and has Qwen3-VL 4B (or Qwen2.5-VL 3B if you need the legacy model) installed."
+          }
+        }
+      }
+    },
+    "manage_how_dayflow_runs": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Manage how Dayflow runs"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "管理 Dayflow 的运行方式"
+          }
+        }
+      }
+    },
+    "manual_setup": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Manual setup:"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Manual setup:"
+          }
+        }
+      }
+    },
+    "model_id": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Model ID"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Model ID"
+          }
+        }
+      }
+    },
+    "need_at_least_1_hour": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Need at least 1 hour of timeline activity to summarize"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Need at least 1 hour of timeline activity to summarize"
+          }
+        }
+      }
+    },
+    "next": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下一步"
+          }
+        }
+      }
+    },
+    "no_activity_data_yet": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No activity data yet"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "还没有活动数据"
+          }
+        }
+      }
+    },
+    "no_cards_yet": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No cards yet"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "No cards yet"
+          }
+        }
+      }
+    },
+    "no_journal_entry_for_this_day": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No journal entry for this day"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "No journal entry for this day"
+          }
+        }
+      }
+    },
+    "not_sure_which_to_choose": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not sure which to choose?"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "不确定选择哪个？"
+          }
+        }
+      }
+    },
+    "notes_for_today": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notes for today"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Notes for today"
+          }
+        }
+      }
+    },
+    "nothing_to_review_yet": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nothing to review yet"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "还没有需要回顾的"
+          }
+        }
+      }
+    },
+    "ollama": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ollama"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Ollama"
+          }
+        }
+      }
+    },
+    "once_downloaded_turn_on_local": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Once downloaded, turn on 'Local Server' in LM Studio (default http://localhost:1234)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Once downloaded, turn on 'Local Server' in LM Studio (default http://localhost:1234)"
+          }
+        }
+      }
+    },
+    "once_the_test_succeeds_dayflow": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Once the test succeeds, Dayflow updates your settings to \\(preset.displayName) automatically."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Once the test succeeds, Dayflow updates your settings to \\(preset.displayName) automatically."
+          }
+        }
+      }
+    },
+    "open_google_ai_studio": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Google AI Studio"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Open Google AI Studio"
+          }
+        }
+      }
+    },
+    "open_system_settings": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open System Settings"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "打开系统设置"
+          }
+        }
+      }
+    },
+    "open_folders_or_adjust_pertype_storage_caps": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open folders or adjust per-type storage caps"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Open folders or adjust per-type storage caps"
+          }
+        }
+      }
+    },
+    "override_dayflows_defaults_to_tailor": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Override Dayflow's defaults to tailor card generation"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Override Dayflow's defaults to tailor card generation"
+          }
+        }
+      }
+    },
+    "overrides_apply_only_when_their": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Overrides apply only when their toggle is on. Unchecked sections fall back to Dayflow's defaults."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Overrides apply only when their toggle is on. Unchecked sections fall back to Dayflow's defaults."
+          }
+        }
+      }
+    },
+    "part_1_of_2": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Part 1 of 2"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Part 1 of 2"
+          }
+        }
+      }
+    },
+    "part_2_of_2": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Part 2 of 2"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Part 2 of 2"
+          }
+        }
+      }
+    },
+    "paste_your_gemini_api_key_below": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paste your Gemini API key below"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Paste your Gemini API key below"
+          }
+        }
+      }
+    },
+    "permission_required": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Permission Required"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Permission Required"
+          }
+        }
+      }
+    },
+    "planning": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Planning"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Planning"
+          }
+        }
+      }
+    },
+    "processing": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Processing"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Processing"
+          }
+        }
+      }
+    },
+    "professional_school_or_careerfocused_tasks": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Professional, school, or career-focused tasks (coding, design, meetings)."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Professional, school, or career-focused tasks (coding, design, meetings)."
+          }
+        }
+      }
+    },
+    "prompt_text": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prompt text"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Prompt text"
+          }
+        }
+      }
+    },
+    "provider_options": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Provider options"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Provider options"
+          }
+        }
+      }
+    },
+    "quick_utilities": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quick utilities"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Quick utilities"
+          }
+        }
+      }
+    },
+    "quit_reopen": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quit & Reopen"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "退出并重新打开"
+          }
+        }
+      }
+    },
+    "reach_out": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reach out"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Reach out"
+          }
+        }
+      }
+    },
+    "record": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Record"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Record"
+          }
+        }
+      }
+    },
+    "recording": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recording"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Recording"
+          }
+        }
+      }
+    },
+    "recording_status": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recording Status"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Recording Status"
+          }
+        }
+      }
+    },
+    "recording_is_off": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recording is off"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Recording is off"
+          }
+        }
+      }
+    },
+    "reducing_the_categoryname_limit_to": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reducing the \\(categoryName) limit to \\(option.label) will immediately delete the oldest \\(categoryName) data to stay under the new cap."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Reducing the \\(categoryName) limit to \\(option.label) will immediately delete the oldest \\(categoryName) data to stay under the new cap."
+          }
+        }
+      }
+    },
+    "regenerate_summary": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Regenerate summary"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Regenerate summary"
+          }
+        }
+      }
+    },
+    "repeat_on": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Repeat on"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Repeat on"
+          }
+        }
+      }
+    },
+    "research": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Research"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Research"
+          }
+        }
+      }
+    },
+    "reset_to_dayflow_defaults": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reset to Dayflow defaults"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Reset to Dayflow defaults"
+          }
+        }
+      }
+    },
+    "retry": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retry"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "重试"
+          }
+        }
+      }
+    },
+    "return_near_the_end_of": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Return near the end of your day to reflect on your intentions. Let Dayflow generate a narrative summary based on the activities on your Timeline."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Return near the end of your day to reflect on your intentions. Let Dayflow generate a narrative summary based on the activities on your Timeline."
+          }
+        }
+      }
+    },
+    "review_your_day": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Review Your Day"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "回顾你的一天"
+          }
+        }
+      }
+    },
+    "run_a_command_as_dayflow": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Run a command as Dayflow"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Run a command as Dayflow"
+          }
+        }
+      }
+    },
+    "run_a_quick_test_for_the_active_provider": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Run a quick test for the active provider"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Run a quick test for the active provider"
+          }
+        }
+      }
+    },
+    "run_this_command": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Run this command:"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Run this command:"
+          }
+        }
+      }
+    },
+    "screen_recording": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Screen Recording"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "屏幕录制"
+          }
+        }
+      }
+    },
+    "screen_recordings_are_stored_locally": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Screen recordings are stored locally on your Mac and can be processed entirely on-device using local AI models."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "屏幕录制内容存储在你的 Mac 本地，可以完全在设备上使用本地 AI 模型处理。"
+          }
+        }
+      }
+    },
+    "select_chatgpt_or_claude_above": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select ChatGPT or Claude above before running the test."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Select ChatGPT or Claude above before running the test."
+          }
+        }
+      }
+    },
+    "select_date": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select Date"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "选择日期"
+          }
+        }
+      }
+    },
+    "select_an_activity_to_view_details": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select an activity to view details"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "选择一个活动以查看详情"
+          }
+        }
+      }
+    },
+    "set_daily_intentions_and_track_your_progress": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Set daily intentions and track your progress"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Set daily intentions and track your progress"
+          }
+        }
+      }
+    },
+    "set_recurring_notifications_to_remind": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Set recurring notifications to remind yourself to set your intentions and reflect."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Set recurring notifications to remind yourself to set your intentions and reflect."
+          }
+        }
+      }
+    },
+    "set_reminders": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Set reminders"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "设置提醒"
+          }
+        }
+      }
+    },
+    "set_todays_intentions": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Set today's intentions"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "设定今天的意图"
+          }
+        }
+      }
+    },
+    "set_your_intentions_today": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Set your intentions today"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "设定今天的意图"
+          }
+        }
+      }
+    },
+    "settings": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "设置"
+          }
+        }
+      }
+    },
+    "setup": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setup"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Setup"
+          }
+        }
+      }
+    },
+    "share": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Share"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "分享"
+          }
+        }
+      }
+    },
+    "share_crash_reports_and_anonymous_usage_data": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Share crash reports and anonymous usage data"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "分享崩溃报告和匿名使用数据"
+          }
+        }
+      }
+    },
+    "show_dock_icon": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show Dock icon"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "显示 Dock 图标"
+          }
+        }
+      }
+    },
+    "show_journal_debug_panel": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show Journal debug panel"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "显示日记调试面板"
+          }
+        }
+      }
+    },
+    "star_dayflow_on_github": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Star Dayflow on GitHub"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在 GitHub 上为 Dayflow 点星"
+          }
+        }
+      }
+    },
+    "start_date_must_be_on_or_before_end_date": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start date must be on or before end date."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "开始日期必须早于或等于结束日期。"
+          }
+        }
+      }
+    },
+    "start_onboarding": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start onboarding"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "开始引导"
+          }
+        }
+      }
+    },
+    "stored_locally_in_userdefaults_and": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stored locally in UserDefaults and sent as a Bearer token for custom endpoints (LiteLLM, OpenRouter, etc.)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Stored locally in UserDefaults and sent as a Bearer token for custom endpoints (LiteLLM, OpenRouter, etc.)"
+          }
+        }
+      }
+    },
+    "submit": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Submit"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "提交"
+          }
+        }
+      }
+    },
+    "subtle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subtle"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Subtle"
+          }
+        }
+      }
+    },
+    "summarizing_your_day_recorded_on_your_timeline": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Summarizing your day recorded on your timeline…"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Summarizing your day recorded on your timeline…"
+          }
+        }
+      }
+    },
+    "summary_from_yesterday": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Summary from yesterday"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Summary from yesterday"
+          }
+        }
+      }
+    },
+    "swipe_on_each_card_on": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Swipe on each card on your Timeline to review your day."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在时间轴上的每张卡片上滑动以回顾你的一天。"
+          }
+        }
+      }
+    },
+    "switch": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Switch"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "切换"
+          }
+        }
+      }
+    },
+    "switch_providers_at_any_time": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Switch providers at any time"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Switch providers at any time"
+          }
+        }
+      }
+    },
+    "tell_us_more_about_your_feedback": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tell us more about your feedback"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "告诉我们更多关于你的反馈"
+          }
+        }
+      }
+    },
+    "terminal_command": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terminal command:"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Terminal command:"
+          }
+        }
+      }
+    },
+    "test_connection": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Test connection"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Test connection"
+          }
+        }
+      }
+    },
+    "thank_you_for_your_feedback": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thank you for your feedback!"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "感谢你的反馈！"
+          }
+        }
+      }
+    },
+    "thank_you": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thank you!"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Thank you!"
+          }
+        }
+      }
+    },
+    "thanks_for_using_dayflow": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thanks for using Dayflow"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Thanks for using Dayflow"
+          }
+        }
+      }
+    },
+    "this_data_will_update_every": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This data will update every 15 minutes. Check back throughout the day to gain new understanding on your workflow."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "This data will update every 15 minutes. Check back throughout the day to gain new understanding on your workflow."
+          }
+        }
+      }
+    },
+    "this_feature_is_in_development": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This feature is in development. Reach out via the feedback tab if you want to be the first to beta test it!"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "此功能正在开发中。如果你想成为第一批测试者，请通过反馈标签页联系我们！"
+          }
+        }
+      }
+    },
+    "this_model_enables_dayflow_to": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This model enables Dayflow to understand what's on your screen"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "This model enables Dayflow to understand what's on your screen"
+          }
+        }
+      }
+    },
+    "this_step_is_optional_you": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This step is optional. You can customize the categories or create new ones anytime while using Dayflow."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "This step is optional. You can customize the categories or create new ones anytime while using Dayflow."
+          }
+        }
+      }
+    },
+    "this_will_download_the_localmodelpresetqwen3vl4bdisplayname": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This will download the \\(LocalModelPreset.qwen3VL4B.displayName) model (about 5GB)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "This will download the \\(LocalModelPreset.qwen3VL4B.displayName) model (about 5GB)"
+          }
+        }
+      }
+    },
+    "this_will_open_lm_studio": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This will open LM Studio and prompt you to download the model (≈3GB)."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "This will open LM Studio and prompt you to download the model (≈3GB)."
+          }
+        }
+      }
+    },
+    "thumbs_down": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thumbs down"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "不喜欢"
+          }
+        }
+      }
+    },
+    "thumbs_up": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thumbs up"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "点赞"
+          }
+        }
+      }
+    },
+    "tip_once_both_are_installed": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tip: Once both are installed, you can choose which provider Dayflow uses from Settings → AI Provider."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Tip: Once both are installed, you can choose which provider Dayflow uses from Settings → AI Provider."
+          }
+        }
+      }
+    },
+    "to_help_dayflow_organize_your": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "To help Dayflow organize your activities more accurately, try adding more details to the descriptions in your categories"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "To help Dayflow organize your activities more accurately, try adding more details to the descriptions in your categories"
+          }
+        }
+      }
+    },
+    "todays_intentions": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Today's intentions"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今天的意图"
+          }
+        }
+      }
+    },
+    "todays_reflections": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Today's reflections"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今天的反思"
+          }
+        }
+      }
+    },
+    "total_focus_time": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total focus time"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "总专注时间"
+          }
+        }
+      }
+    },
+    "total_time_captured": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total time captured"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "总记录时间"
+          }
+        }
+      }
+    },
+    "total_time_distracted": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total time distracted"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "总分心时间"
+          }
+        }
+      }
+    },
+    "turn_on_screen_recording_for": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turn on Screen Recording for Dayflow, then quit and reopen the app to finish."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "为 Dayflow 开启屏幕录制，然后退出并重新打开应用以完成。"
+          }
+        }
+      }
+    },
+    "undo": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Undo"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "撤销"
+          }
+        }
+      }
+    },
+    "upgrade_now": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Upgrade now"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Upgrade now"
+          }
+        }
+      }
+    },
+    "upgrade_to_qwen3vl_for_a": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Upgrade to Qwen3VL for a big improvement in quality."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Upgrade to Qwen3VL for a big improvement in quality."
+          }
+        }
+      }
+    },
+    "upgrade_to_presetdisplayname": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Upgrade to \\(preset.displayName)"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Upgrade to \\(preset.displayName)"
+          }
+        }
+      }
+    },
+    "use_chatgpt_or_claude": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use ChatGPT or Claude"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Use ChatGPT or Claude"
+          }
+        }
+      }
+    },
+    "use_any_openaicompatible_vlm": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use any OpenAI-compatible VLM"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Use any OpenAI-compatible VLM"
+          }
+        }
+      }
+    },
+    "use_local_ai": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use local AI"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "使用本地 AI"
+          }
+        }
+      }
+    },
+    "view_release_notes": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "View release notes"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "查看发布说明"
+          }
+        }
+      }
+    },
+    "visit_google_ai_studio": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Visit Google AI Studio"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Visit Google AI Studio"
+          }
+        }
+      }
+    },
+    "we_recommend_using_it_for_the_best_experience": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We recommend using it for the best experience."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "我们建议使用它以获得最佳体验。"
+          }
+        }
+      }
+    },
+    "well_ask_your_cli_a": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We'll ask your CLI a simple question to verify it's working and signed in."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "We'll ask your CLI a simple question to verify it's working and signed in."
+          }
+        }
+      }
+    },
+    "week_in_review": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Week in review"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "本周回顾"
+          }
+        }
+      }
+    },
+    "welcome_to_dayflow_let_it": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welcome to Dayflow! Let it run for about 30 minutes to gather enough data, then come back to explore your personalized timeline. If you have any issues, feature requests, or feedback please use the feedback tab. I would love to hear from you!"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "欢迎来到 Dayflow！让它运行约 30 分钟以收集足够的数据，然后回来探索你的个性化时间轴。如有问题、功能需求或反馈，请使用反馈标签页。我非常期待听到你的声音！"
+          }
+        }
+      }
+    },
+    "what_are_you_working_towards": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What are you working towards?"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你在努力做什么？"
+          }
+        }
+      }
+    },
+    "what_mindset_do_you_want_to_carry_today": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What mindset do you want to carry today?"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今天你想保持什么心态？"
+          }
+        }
+      }
+    },
+    "whats_new_in_releasenoteversion": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What's New in \\(releaseNote.version) 🎉"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "What's New in \\(releaseNote.version) 🎉"
+          }
+        }
+      }
+    },
+    "when_off_dayflow_runs_as_a_menu_baronly_app": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "When off, Dayflow runs as a menu bar–only app."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "关闭时，Dayflow 仅作为菜单栏应用运行。"
+          }
+        }
+      }
+    },
+    "which_local_runtime_are_you_using": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Which local runtime are you using?"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Which local runtime are you using?"
+          }
+        }
+      }
+    },
+    "which_tool_are_you_using": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Which tool are you using?"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Which tool are you using?"
+          }
+        }
+      }
+    },
+    "you_can_switch_at_any_time_in_the_settings": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You can switch at any time in the settings."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你可以随时在设置中切换。"
+          }
+        }
+      }
+    },
+    "you_have_codexclaude_cli_installed": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You have Codex/Claude CLI installed!"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你已安装 Codex/Claude CLI！"
+          }
+        }
+      }
+    },
+    "youve_reviewed_all_your_activities": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You've reviewed all your activities so far.\\nThe Timeline right panel will be updated with your rating."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你已经回顾了到目前为止的所有活动。\\n时间轴右侧面板将根据你的评分更新。"
+          }
+        }
+      }
+    },
+    "your_api_key_is_encrypted": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your API key is encrypted and stored in your macOS Keychain - never uploaded anywhere"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你的 API 密钥已加密并存储在 macOS 钥匙串中 - 永远不会上传到任何地方"
+          }
+        }
+      }
+    },
+    "your_day_so_far": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your day so far"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Your day so far"
+          }
+        }
+      }
+    },
+    "your_day_so_far_is": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your day so far is a preview of what's to come in Dashboard. This feature is still in beta and may change rapidly."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Your day so far is a preview of what's to come in Dashboard. This feature is still in beta and may change rapidly."
+          }
+        }
+      }
+    },
+    "your_focus": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your focus"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你的专注"
+          }
+        }
+      }
+    },
+    "your_privacy_is_guaranteed_all": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your privacy is guaranteed: All recordings stay on your Mac. With local AI models, even processing happens on-device. Nothing leaves your computer."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Your privacy is guaranteed: All recordings stay on your Mac. With local AI models, even processing happens on-device. Nothing leaves your computer."
+          }
+        }
+      }
+    },
+    "your_reflections": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your reflections"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Your reflections"
+          }
+        }
+      }
+    },
+    "your_review": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your review"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "Your review"
+          }
+        }
+      }
+    },
+    "macos_will_ask_for_screen": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS will ask for screen recording permission to enable activity tracking."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "macOS will ask for screen recording permission to enable activity tracking."
+          }
+        }
+      }
+    },
+    "to_update_your_data": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "to update your data."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "to update your data."
+          }
+        }
+      }
+    },
+    "tracked_this_week": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "tracked this week"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "本周跟踪"
+          }
+        }
+      }
+    },
+    "visioncapable": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "vision-capable"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "needs_translation",
+            "value": "vision-capable"
+          }
+        }
+      }
+    },
+    "permission_granted_click_next_to_continue": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "✓ Permission granted! Click Next to continue."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "✓ 权限已授予！点击下一步继续。"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

@@ -28,19 +28,19 @@ struct ScreenRecordingPermissionView: View {
         HStack(spacing: 60) {
             // Left side - text and controls
             VStack(alignment: .leading, spacing: 24) {
-                Text("Last step!")
+                Text("screen_last_step")
                     .font(.custom("Nunito", size: 20))
                     .foregroundColor(.black.opacity(0.7))
                     .multilineTextAlignment(.leading)
                     .fixedSize(horizontal: false, vertical: true)
                     .padding(.bottom, 20)
-                
-                Text("Screen Recording")
+
+                Text("screen_recording_title")
                     .font(.custom("Nunito", size: 32))
                     .fontWeight(.bold)
                     .foregroundColor(.black.opacity(0.9))
-                
-                Text("Screen recordings are stored locally on your Mac and can be processed entirely on-device using local AI models.")
+
+                Text("screen_recording_desc")
                     .font(.custom("Nunito", size: 16))
                     .foregroundColor(.black.opacity(0.6))
                     .fixedSize(horizontal: false, vertical: true)
@@ -51,11 +51,11 @@ struct ScreenRecordingPermissionView: View {
                     case .notRequested:
                         EmptyView()
                     case .granted:
-                        Text("✓ Permission granted! Click Next to continue.")
+                        Text("screen_permission_granted_msg")
                             .font(.custom("Nunito", size: 14))
                             .foregroundColor(.green)
                     case .needsAction:
-                        Text("Turn on Screen Recording for Dayflow, then quit and reopen the app to finish.")
+                        Text("screen_permission_needs_action")
                             .font(.custom("Nunito", size: 14))
                             .foregroundColor(.orange)
                     }
@@ -75,7 +75,7 @@ struct ScreenRecordingPermissionView: View {
                                             .scaleEffect(0.8)
                                             .progressViewStyle(CircularProgressViewStyle())
                                     }
-                                    Text(isCheckingPermission ? "Checking..." : "Grant Permission")
+                                    Text(isCheckingPermission ? String(localized: "checking") : String(localized: "grant_permission"))
                                         .font(.custom("Nunito", size: 16))
                                         .fontWeight(.medium)
                                 }
@@ -93,8 +93,8 @@ struct ScreenRecordingPermissionView: View {
                         HStack(spacing: 12) {
                             DayflowSurfaceButton(
                                 action: openSystemSettings,
-                                content: { 
-                                    Text("Open System Settings")
+                                content: {
+                                    Text("open_system_settings")
                                         .font(.custom("Nunito", size: 16))
                                         .fontWeight(.medium)
                                 },
@@ -108,8 +108,8 @@ struct ScreenRecordingPermissionView: View {
                             )
                             DayflowSurfaceButton(
                                 action: quitAndReopen,
-                                content: { 
-                                    Text("Quit & Reopen")
+                                content: {
+                                    Text("quit_reopen")
                                         .font(.custom("Nunito", size: 16))
                                         .fontWeight(.medium)
                                 },
@@ -132,7 +132,7 @@ struct ScreenRecordingPermissionView: View {
                 HStack(spacing: 16) {
                     DayflowSurfaceButton(
                         action: onBack,
-                        content: { Text("Back").font(.custom("Nunito", size: 14)).fontWeight(.semibold) },
+                        content: { Text("back").font(.custom("Nunito", size: 14)).fontWeight(.semibold) },
                         background: .white,
                         foreground: Color(red: 0.25, green: 0.17, blue: 0),
                         borderColor: .clear,
@@ -143,12 +143,12 @@ struct ScreenRecordingPermissionView: View {
                         isSecondaryStyle: true
                     )
                     DayflowSurfaceButton(
-                        action: { 
+                        action: {
                             if permissionState == .granted {
                                 onNext()
                             }
                         },
-                        content: { Text("Next").font(.custom("Nunito", size: 14)).fontWeight(.semibold) },
+                        content: { Text("next").font(.custom("Nunito", size: 14)).fontWeight(.semibold) },
                         background: permissionState == .granted ? Color(red: 0.25, green: 0.17, blue: 0) : Color(red: 0.25, green: 0.17, blue: 0).opacity(0.3),
                         foreground: permissionState == .granted ? .white : .white.opacity(0.5),
                         borderColor: .clear,

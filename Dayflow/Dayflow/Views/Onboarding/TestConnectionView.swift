@@ -82,13 +82,13 @@ struct TestConnectionView: View {
     
     private var buttonTitle: String {
         if isTesting {
-            return "Testing connection..."
+            return String(localized: "test_connection_testing")
         } else if testResult?.isSuccess == true {
-            return "Test Successful!"
+            return String(localized: "test_connection_success_btn")
         } else if testResult?.isSuccess == false {
-            return "Test Failed - Try Again"
+            return String(localized: "test_connection_failed_btn")
         } else {
-            return "Test Connection"
+            return String(localized: "test_connection_btn")
         }
     }
     
@@ -113,9 +113,9 @@ struct TestConnectionView: View {
         
         // Get API key from keychain
         guard let apiKey = KeychainManager.shared.retrieve(for: "gemini") else {
-            testResult = .failure("No API key found. Please enter your API key first.")
+            testResult = .failure(String(localized: "test_no_api_key"))
             onTestComplete?(false)
-            AnalyticsService.shared.capture("connection_test_failed", ["provider": "gemini", "error_code": "no_api_key"]) 
+            AnalyticsService.shared.capture("connection_test_failed", ["provider": "gemini", "error_code": "no_api_key"])
             return
         }
         
@@ -127,7 +127,7 @@ struct TestConnectionView: View {
             do {
                 let _ = try await GeminiAPIHelper.shared.testConnection(apiKey: apiKey)
                 await MainActor.run {
-                    testResult = .success("Connection successful! Your API key is working.")
+                    testResult = .success(String(localized: "test_connection_success_msg"))
                     isTesting = false
                     onTestComplete?(true)
                 }

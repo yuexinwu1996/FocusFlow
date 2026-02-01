@@ -17,7 +17,7 @@ struct OnboardingFlow: View {
     @State private var textOpacity: Double = 0
     @AppStorage("selectedLLMProvider") private var selectedProvider: String = "gemini" // Persist across sessions
     @EnvironmentObject private var categoryStore: CategoryStore
-    private let fullText = "Your day has a story. Uncover it with Dayflow."
+    private let fullText = String(localized: "onboarding_tagline")
     
     @ViewBuilder
     var body: some View {
@@ -315,7 +315,7 @@ struct WelcomeView: View {
                         
                         DayflowSurfaceButton(
                             action: onStart,
-                            content: { Text("Start").font(.custom("Nunito", size: 16)).fontWeight(.semibold) },
+                            content: { Text("start").font(.custom("Nunito", size: 16)).fontWeight(.semibold) },
                             background: Color(red: 0.25, green: 0.17, blue: 0),
                             foreground: .white,
                             borderColor: .clear,
@@ -396,11 +396,11 @@ struct CompletionView: View {
 
             // Title section
             VStack(spacing: 8) {
-                Text("You are ready to go!")
+                Text("onboarding_ready")
                     .font(.custom("InstrumentSerif-Regular", size: 36))
                     .foregroundColor(.black.opacity(0.9))
-                
-                Text("Welcome to Dayflow! Let it run for about 30 minutes to gather enough data, then come back to explore your personalized timeline. If you have any issues, feature requests, or feedback please use the feedback tab. I would love to hear from you! ")
+
+                Text("onboarding_welcome_message")
                     .font(.custom("Nunito", size: 15))
                     .foregroundColor(.black.opacity(0.6))
                     .multilineTextAlignment(.center)
@@ -409,7 +409,7 @@ struct CompletionView: View {
             
             // Referral survey replaces the static preview
             ReferralSurveyView(
-                prompt: "I have a small favor to ask. I'd love to understand where you first heard about Dayflow.",
+                prompt: String(localized: "onboarding_referral_prompt"),
                 showSubmitButton: false,
                 selectedReferral: $referralSelection,
                 customReferral: $referralDetail
@@ -422,7 +422,7 @@ struct CompletionView: View {
                     onFinish()
                 },
                 content: {
-                    Text("Start")
+                    Text("start")
                         .font(.custom("Nunito", size: 16))
                         .fontWeight(.semibold)
                 },

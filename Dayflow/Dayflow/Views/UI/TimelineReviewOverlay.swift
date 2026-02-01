@@ -338,7 +338,7 @@ struct TimelineReviewOverlay: View {
 
     private var reviewBottomContent: some View {
         VStack(spacing: 14) {
-            Text("Swipe on each card on your Timeline to review your day.")
+            Text("timeline_review_swipe_hint")
                 .font(.custom("Nunito", size: 14).weight(.medium))
                 .foregroundColor(Color(hex: "98806D"))
                 .lineLimit(1)
@@ -356,10 +356,10 @@ struct TimelineReviewOverlay: View {
         let summary = ratingSummary
         return VStack(spacing: 30) {
             VStack(spacing: 12) {
-                Text("All caught up!")
+                Text("all_caught_up")
                     .font(.custom("InstrumentSerif-Regular", size: 40))
                     .foregroundColor(Color(hex: "333333"))
-                Text("You've reviewed all your activities so far.\nThe Timeline right panel will be updated with your rating.")
+                Text("timeline_review_all_caught_up_detail")
                     .font(.custom("Nunito", size: 16).weight(.medium))
                     .foregroundColor(Color(hex: "333333"))
                     .multilineTextAlignment(.center)
@@ -370,7 +370,7 @@ struct TimelineReviewOverlay: View {
             Button {
                 dismissOverlay()
             } label: {
-                Text("Close")
+                Text("close")
                     .font(.custom("Nunito", size: 14).weight(.semibold))
                     .foregroundColor(Color(hex: "333333"))
                     .padding(.horizontal, 24)
@@ -397,10 +397,10 @@ struct TimelineReviewOverlay: View {
 
     private var emptyState: some View {
         VStack(spacing: 12) {
-            Text("Nothing to review yet")
+            Text("nothing_to_review")
                 .font(.custom("InstrumentSerif-Regular", size: 28))
                 .foregroundColor(Color(hex: "333333"))
-            Text("Come back after a few timeline cards appear.")
+            Text("timeline_review_come_back")
                 .font(.custom("Nunito", size: 14).weight(.medium))
                 .foregroundColor(Color(hex: "707070"))
         }
@@ -1449,7 +1449,7 @@ private struct TimelineReviewRatingRow: View {
         } label: {
             VStack(spacing: 6) {
                 ZUndoIcon(size: 16)
-                Text("Undo")
+                Text("undo")
                     .font(.custom("Nunito", size: 12).weight(.medium))
                     .foregroundColor(Color(hex: "98806D"))
             }

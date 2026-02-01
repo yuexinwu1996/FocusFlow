@@ -21,20 +21,20 @@ struct PermissionExplanationDialog: View {
                 .cornerRadius(12)
             
             // Title
-            Text("Permission Required")
+            Text("permission_required")
                 .font(.custom("Nunito", size: 24))
                 .fontWeight(.bold)
                 .foregroundColor(.black.opacity(0.9))
-            
+
             // Explanation
             VStack(spacing: 12) {
-                Text("macOS will ask for screen recording permission to enable activity tracking.")
+                Text("permission_macos_ask")
                     .font(.custom("Nunito", size: 15))
                     .foregroundColor(.black.opacity(0.7))
                     .multilineTextAlignment(.center)
                     .fixedSize(horizontal: false, vertical: true)
-                
-                Text("Your privacy is guaranteed: All recordings stay on your Mac. With local AI models, even processing happens on-device. Nothing leaves your computer.")
+
+                Text("permission_privacy_guaranteed")
                     .font(.custom("Nunito", size: 14))
                     .foregroundColor(.black.opacity(0.6))
                     .multilineTextAlignment(.center)
@@ -47,7 +47,7 @@ struct PermissionExplanationDialog: View {
                 Button(action: {
                     isPresented = false
                 }) {
-                    Text("Cancel")
+                    Text("cancel")
                         .font(.custom("Nunito", size: 16))
                         .fontWeight(.medium)
                         .foregroundColor(.black.opacity(0.6))
@@ -58,7 +58,7 @@ struct PermissionExplanationDialog: View {
                         .cornerRadius(8)
                 }
                 .buttonStyle(PlainButtonStyle())
-                
+
                 Button(action: {
                     isPresented = false
                     // Small delay to let dialog close before showing system dialog
@@ -66,7 +66,7 @@ struct PermissionExplanationDialog: View {
                         onProceed()
                     }
                 }) {
-                    Text("Grant Permission")
+                    Text("grant_permission")
                         .font(.custom("Nunito", size: 16))
                         .fontWeight(.semibold)
                         .foregroundColor(.white)

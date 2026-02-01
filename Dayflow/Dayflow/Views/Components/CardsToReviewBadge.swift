@@ -16,7 +16,7 @@ struct CardsToReviewBadge: View {
             stackedCardsIcon
 
             // Label text
-            Text(count == 1 ? "card to review" : "cards to review")
+            Text(count == 1 ? LocalizedStringKey("cards_to_review_singular") : LocalizedStringKey("cards_to_review_plural"))
                 .font(.custom("Nunito", size: 10).weight(.medium))
                 .foregroundColor(.white)
         }

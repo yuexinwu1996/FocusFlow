@@ -335,7 +335,7 @@ struct DaySummaryView: View {
         VStack(alignment: .leading, spacing: Design.donutSectionSpacing) {
             VStack(alignment: .leading, spacing: Design.headerSpacing) {
                 HStack(alignment: .center) {
-                    Text("Your day so far")
+                    Text("day_summary_title")
                         .font(.custom("InstrumentSerif-Regular", size: 24))
                         .foregroundColor(Design.titleColor)
 
@@ -347,7 +347,7 @@ struct DaySummaryView: View {
                         HStack(spacing: 4) {
                             Image(systemName: "square.and.arrow.up")
                                 .font(.system(size: 10, weight: .medium))
-                            Text("Share")
+                            Text("share")
                                 .font(.custom("Nunito", size: 10).weight(.medium))
                         }
                         .foregroundColor(Design.shareTextColor)
@@ -366,7 +366,7 @@ struct DaySummaryView: View {
                     .buttonStyle(.plain)
                 }
 
-                Text("This data will update every 15 minutes. Check back throughout the day to gain new understanding on your workflow.")
+                Text("day_summary_update_note")
                     .font(.custom("Nunito", size: 11))
                     .foregroundColor(Design.subtitleColor)
                     .lineSpacing(2)
@@ -394,7 +394,7 @@ struct DaySummaryView: View {
                 .stroke(Color.gray.opacity(0.2), lineWidth: 20)
                 .frame(width: 140, height: 140)
 
-            Text("No activity data yet")
+            Text("no_activity_data")
                 .font(.custom("Nunito", size: 12))
                 .foregroundColor(Color.gray.opacity(0.6))
         }
@@ -424,16 +424,16 @@ struct DaySummaryView: View {
             ConfettiBurstView(trigger: particleTrigger)
 
             VStack(spacing: 12) {
-                Text("EARLY ACCESS")
+                Text("early_access")
                     .font(.custom("Nunito", size: 11).weight(.semibold))
                     .foregroundColor(Design.gateOverlineColor)
                     .tracking(0.6)
 
-                Text("Your day so far")
+                Text("day_summary_title")
                     .font(.custom("InstrumentSerif-Regular", size: 22))
                     .foregroundColor(Design.gateTitleColor)
 
-                Text("Your day so far is a preview of what's to come in Dashboard. This feature is still in beta and may change rapidly.")
+                Text("day_summary_beta_message")
                     .font(.custom("Nunito", size: 11))
                     .foregroundColor(Design.gateSubtitleColor)
                     .multilineTextAlignment(.center)
@@ -513,7 +513,7 @@ struct DaySummaryView: View {
                     }
                     .scaleEffect(successIconScale)
 
-                    Text("Access granted!")
+                    Text("access_granted")
                         .font(.custom("Nunito", size: 12).weight(.bold))
                         .foregroundColor(Design.gateTitleColor)
                         .opacity(checkmarkStroke)
@@ -561,7 +561,7 @@ struct DaySummaryView: View {
     private var focusSection: some View {
         VStack(alignment: .leading, spacing: Design.focusSectionSpacing) {
             HStack(alignment: .center, spacing: 6) {
-                Text("Your focus")
+                Text("day_summary_focus_title")
                     .font(.custom("InstrumentSerif-Regular", size: 22))
                     .foregroundColor(Design.focusTitleColor)
 
@@ -584,7 +584,7 @@ struct DaySummaryView: View {
             }
 
             if isFocusSelectionEmpty {
-                Text("Edit categories to calculate focus.")
+                Text("day_summary_edit_categories_focus")
                     .font(.custom("Nunito", size: 11))
                     .foregroundColor(Design.subtitleColor)
             }
@@ -616,7 +616,7 @@ struct DaySummaryView: View {
     private var distractionsSection: some View {
         VStack(alignment: .leading, spacing: Design.distractionsSpacing) {
             HStack(alignment: .center, spacing: 6) {
-                Text("Distractions so far")
+                Text("day_summary_distractions_title")
                     .font(.custom("InstrumentSerif-Regular", size: 22))
                     .foregroundColor(Design.titleColor)
 
@@ -635,7 +635,7 @@ struct DaySummaryView: View {
             }
 
             if isDistractionSelectionEmpty {
-                Text("Edit categories to calculate distractions.")
+                Text("day_summary_edit_categories_distractions")
                     .font(.custom("Nunito", size: 11))
                     .foregroundColor(Design.subtitleColor)
             }
@@ -1125,7 +1125,7 @@ private struct TotalFocusCard: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             HStack(spacing: 6) {
-                Text("Total focus time")
+                Text("day_summary_total_focus_time")
                     .font(.custom("InstrumentSerif-Regular", size: 16))
                     .foregroundColor(Color(hex: "333333"))
 

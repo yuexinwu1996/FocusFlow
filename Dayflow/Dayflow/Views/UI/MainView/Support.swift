@@ -3,6 +3,12 @@ import SwiftUI
 // MARK: - Cached DateFormatters (creating DateFormatters is expensive due to ICU initialization)
 // These are internal (not private) so they can be shared with DateNavigationControls
 
+let cachedMonthDayFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "MMM d"
+    return formatter
+}()
+
 let cachedTodayDisplayFormatter: DateFormatter = {
     let formatter = DateFormatter()
     formatter.dateFormat = "'Today,' MMM d"
@@ -58,7 +64,9 @@ extension MainView {
         let timelineToday = timelineDisplayDate(from: now, now: now)
 
         if calendar.isDate(displayDate, inSameDayAs: timelineToday) {
-            return cachedTodayDisplayFormatter.string(from: displayDate)
+            // Use localized "Today" + month/day
+            let monthDay = cachedMonthDayFormatter.string(from: displayDate)
+            return String(localized: "today") + ", " + monthDay
         } else {
             return cachedOtherDayDisplayFormatter.string(from: displayDate)
         }

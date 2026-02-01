@@ -90,7 +90,7 @@ struct JournalWeeklyView: View {
                             .foregroundStyle(Color.white)
                     }
 
-                    Text("Set reminders")
+                    Text("journal_set_reminders")
                         .font(.custom("Nunito-SemiBold", size: 13))
                         .foregroundStyle(JournalWeeklyTokens.accentText)
                 }
