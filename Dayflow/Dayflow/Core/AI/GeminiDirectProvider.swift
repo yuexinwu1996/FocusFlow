@@ -690,8 +690,20 @@ final class GeminiDirectProvider: LLMProvider {
         let existingCardsString = String(data: existingCardsJSON, encoding: .utf8) ?? "[]"
         let promptSections = GeminiPromptSections(overrides: GeminiPromptPreferences.load())
 
+        // Detect user's language preference
+        let userLanguage: String = {
+            let languages = UserDefaults.standard.array(forKey: "AppleLanguages") as? [String] ?? []
+            if let first = languages.first, first.hasPrefix("zh") {
+                return "Chinese (Simplified)"
+            }
+            return "English"
+        }()
+
         let basePrompt = """
         You are a digital anthropologist, observing a user's raw activity log. Your goal is to synthesize this log into a high-level, human-readable story of their session, presented as a series of timeline cards.
+
+        OUTPUT LANGUAGE: All titles, summaries, and detailed summaries MUST be written in \(userLanguage). This is critical - do NOT use any other language.
+
         THE GOLDEN RULE:
             Create cards that narrate one cohesive session, aiming for 15–60 minutes. Keep every card ≥10 minutes, split up any cards that are >60 minutes, and if a prospective card would be <10 minutes, merge it into the neighboring card that preserves the best story.
 

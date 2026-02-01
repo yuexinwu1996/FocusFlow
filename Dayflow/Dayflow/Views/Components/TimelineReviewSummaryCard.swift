@@ -183,7 +183,7 @@ struct TimelineReviewSummaryCard: View {
         let placeholder = summary.hasData == false
         let distracted = ReviewMetric(
             id: "distracted",
-            label: "Distracted",
+            label: String(localized: "review_distracted"),
             ratio: max(CGFloat(summary.distractedRatio), 0),
             durationText: durationText(summary.distractedDuration),
             style: metricStyle(
@@ -197,7 +197,7 @@ struct TimelineReviewSummaryCard: View {
 
         let neutral = ReviewMetric(
             id: "neutral",
-            label: "Neutral",
+            label: String(localized: "review_neutral"),
             ratio: max(CGFloat(summary.neutralRatio), 0),
             durationText: durationText(summary.neutralDuration),
             style: metricStyle(
@@ -211,7 +211,7 @@ struct TimelineReviewSummaryCard: View {
 
         let productive = ReviewMetric(
             id: "productive",
-            label: "Focused",
+            label: String(localized: "review_focused"),
             ratio: max(CGFloat(summary.productiveRatio), 0),
             durationText: durationText(summary.productiveDuration),
             style: metricStyle(

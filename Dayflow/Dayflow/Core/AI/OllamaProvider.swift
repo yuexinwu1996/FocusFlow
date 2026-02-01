@@ -567,8 +567,19 @@ final class OllamaProvider: LLMProvider {
 
         let promptSections = OllamaPromptSections(overrides: OllamaPromptPreferences.load())
 
+        // Detect user's language preference
+        let userLanguage: String = {
+            let languages = UserDefaults.standard.array(forKey: "AppleLanguages") as? [String] ?? []
+            if let first = languages.first, first.hasPrefix("zh") {
+                return "Chinese (Simplified)"
+            }
+            return "English"
+        }()
+
         let basePrompt = """
         You are analyzing someone's computer activity from the last 15 minutes.
+
+        OUTPUT LANGUAGE: All summaries MUST be written in \(userLanguage). This is critical.
 
         Activity periods:
         \(observationsText)
@@ -647,8 +658,19 @@ final class OllamaProvider: LLMProvider {
 
         let promptSections = OllamaPromptSections(overrides: OllamaPromptPreferences.load())
 
+        // Detect user's language preference
+        let userLanguage: String = {
+            let languages = UserDefaults.standard.array(forKey: "AppleLanguages") as? [String] ?? []
+            if let first = languages.first, first.hasPrefix("zh") {
+                return "Chinese (Simplified)"
+            }
+            return "English"
+        }()
+
         let basePrompt = """
         Create a casual, conversational title for this activity summary.
+
+        OUTPUT LANGUAGE: The title MUST be written in \(userLanguage). This is critical.
 
         INPUT SUMMARY:
         "\(summary)"

@@ -545,11 +545,22 @@ final class ChatCLIProvider: LLMProvider {
         let existingCardsJSON = existingCardsData.flatMap { String(data: $0, encoding: .utf8) } ?? "[]"
         let promptSections = ChatCLIPromptSections(overrides: ChatCLIPromptPreferences.load())
 
+        // Detect user's language preference
+        let userLanguage: String = {
+            let languages = UserDefaults.standard.array(forKey: "AppleLanguages") as? [String] ?? []
+            if let first = languages.first, first.hasPrefix("zh") {
+                return "Chinese (Simplified)"
+            }
+            return "English"
+        }()
+
         // Build prompt with explicit concatenation to avoid GRDB SQL interpolation pollution
         let categoriesSectionText = categoriesSection(from: context.categories)
 
         return """
         You are synthesizing a user's activity log into timeline cards. Each card represents one main thing they did.
+
+        OUTPUT LANGUAGE: All titles, summaries, and detailed summaries MUST be written in \(userLanguage). This is critical - do NOT use any other language.
 
         CORE PRINCIPLE:
         Each card = one coherent activity. Time is a constraint (10-60 min), not a goal. Don't stuff unrelated activities into one card just to fill time.
