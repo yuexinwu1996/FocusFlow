@@ -349,20 +349,36 @@ extension MainView {
 
             Spacer()
 
-            // Recording toggle (now inline with header)
+            // AI Review toggle (replaces Record toggle)
             HStack(spacing: 4) {
-                Text("timeline_record")
+                Text("ai_review_toggle")
                     .font(
                         Font.custom("Nunito", size: 12)
                             .weight(.medium)
                     )
                     .foregroundColor(Color(red: 0.62, green: 0.44, blue: 0.36))
 
-                Toggle("timeline_record", isOn: $appState.isRecording)
+                Toggle("ai_review_toggle", isOn: Binding(
+                    get: { appState.aiReviewEnabled },
+                    set: { newValue in
+                        if newValue {
+                            // User is turning ON - show mode selection sheet
+                            pendingAIReviewToggle = true
+                            showAnalysisModeSheet = true
+                        } else {
+                            // User is turning OFF - directly disable
+                            appState.aiReviewEnabled = false
+                            appState.isRecording = false
+                        }
+                    }
+                ))
                     .labelsHidden()
                     .toggleStyle(SunriseGlassPillToggleStyle())
                     .scaleEffect(0.7)
-                    .accessibilityLabel(Text("timeline_recording"))
+                    .accessibilityLabel(Text("ai_review_toggle"))
+            }
+            .sheet(isPresented: $showAnalysisModeSheet) {
+                analysisModeSheetContent
             }
         }
         .padding(.horizontal, 10)
@@ -559,6 +575,63 @@ extension MainView {
             .environmentObject(categoryStore)
             // Removed .contentShape(Rectangle()) and .onTapGesture to allow keyboard input
         }
+    }
+
+    @ViewBuilder
+    private var analysisModeSheetContent: some View {
+        ZStack {
+            Color.black.opacity(0.3)
+                .ignoresSafeArea()
+                .onTapGesture {
+                    // Cancel on background tap
+                    pendingAIReviewToggle = false
+                    showAnalysisModeSheet = false
+                }
+
+            AnalysisModePickerSheet(
+                isPresented: $showAnalysisModeSheet,
+                onModeSelected: { mode in
+                    handleAnalysisModeSelected(mode)
+                },
+                onCancel: {
+                    pendingAIReviewToggle = false
+                }
+            )
+        }
+        .presentationBackground(.clear)
+    }
+
+    private func handleAnalysisModeSelected(_ mode: AnalysisMode) {
+        appState.analysisMode = mode
+
+        if mode == .advanced {
+            // Check screen recording permission
+            if CGPreflightScreenCaptureAccess() {
+                // Permission granted - enable AI Review with advanced mode
+                appState.aiReviewEnabled = true
+                appState.isRecording = true
+            } else {
+                // Request permission
+                _ = CGRequestScreenCaptureAccess()
+                // Check again after request
+                if CGPreflightScreenCaptureAccess() {
+                    appState.aiReviewEnabled = true
+                    appState.isRecording = true
+                } else {
+                    // Permission denied - reset to off
+                    appState.aiReviewEnabled = false
+                    appState.isRecording = false
+                }
+            }
+        } else {
+            // Basic mode - no permission needed
+            appState.aiReviewEnabled = true
+            // Basic mode doesn't need screen recording
+            // It will use AppActivityRecorder instead
+            appState.isRecording = false
+        }
+
+        pendingAIReviewToggle = false
     }
 
     private var weeklyHoursFadeOpacity: Double {

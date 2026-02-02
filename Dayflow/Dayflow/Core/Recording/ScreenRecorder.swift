@@ -88,23 +88,28 @@ final class ScreenRecorder: NSObject, @unchecked Sendable {
         super.init()
         dbg("init – autoStart = \(autoStart)")
 
-        wantsRecording = AppState.shared.isRecording
+        // Only want screen recording in advanced mode
+        let isAdvancedMode = AppState.shared.analysisMode == .advanced
+        wantsRecording = AppState.shared.isRecording && isAdvancedMode
 
-        // Observe the app-wide recording flag
+        // Observe the app-wide recording flag and analysis mode
         sub = AppState.shared.$isRecording
+            .combineLatest(AppState.shared.$analysisMode)
             .dropFirst()
-            .removeDuplicates()
-            .sink { [weak self] rec in
+            .removeDuplicates { $0.0 == $1.0 && $0.1 == $1.1 }
+            .sink { [weak self] (rec, mode) in
                 self?.q.async { [weak self] in
                     guard let self else { return }
-                    self.wantsRecording = rec
+                    // Only capture screenshots in advanced mode
+                    let shouldRecord = rec && mode == .advanced
+                    self.wantsRecording = shouldRecord
 
                     // Clear paused state when user disables recording
-                    if !rec && self.state == .paused {
-                        self.transition(to: .idle, context: "user disabled recording")
+                    if !shouldRecord && self.state == .paused {
+                        self.transition(to: .idle, context: "user disabled recording or switched to basic mode")
                     }
 
-                    rec ? self.start() : self.stop()
+                    shouldRecord ? self.start() : self.stop()
                 }
             }
 
@@ -118,7 +123,9 @@ final class ScreenRecorder: NSObject, @unchecked Sendable {
             }
 
         // Honor the current flag once (after subscriptions exist)
-        if autoStart, AppState.shared.isRecording { start() }
+        if autoStart, AppState.shared.isRecording, AppState.shared.analysisMode == .advanced {
+            start()
+        }
 
         registerForSleepAndLock()
     }
@@ -549,8 +556,10 @@ final class ScreenRecorder: NSObject, @unchecked Sendable {
         q.asyncAfter(deadline: .now() + delay) { [weak self] in
             guard let self else { return }
             Task { @MainActor in
-                guard AppState.shared.isRecording else {
-                    dbg("\(context) – skip auto-resume (recording disabled)")
+                // Only resume in advanced mode with recording enabled
+                guard AppState.shared.isRecording,
+                      AppState.shared.analysisMode == .advanced else {
+                    dbg("\(context) – skip auto-resume (recording disabled or not in advanced mode)")
                     return
                 }
                 self.start()

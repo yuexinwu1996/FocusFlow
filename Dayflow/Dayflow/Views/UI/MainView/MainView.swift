@@ -62,6 +62,10 @@ struct MainView: View {
     @State var weeklyHoursFrame: CGRect = .zero
     @State var timelineTimeLabelFrames: [CGRect] = []
 
+    // AI Review mode selection sheet
+    @State var showAnalysisModeSheet = false
+    @State var pendingAIReviewToggle = false
+
     let rateSummaryFooterHeight: CGFloat = 28
     let weeklyHoursFadeDistance: CGFloat = 12
     var rateSummaryFooterInset: CGFloat {
